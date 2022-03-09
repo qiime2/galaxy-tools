@@ -28,5 +28,6 @@ jobs:
           token: ${{ secrets.Q2D2_TOKEN }}
           commit-message: Updated tools
           committer: q2d2 <q2d2.noreply@gmail.com>
+          author: q2d2 <q2d2.noreply@gmail.com>
           title: Automated re-render of Galaxy Tools
           body: Results of `make render` on `main`
