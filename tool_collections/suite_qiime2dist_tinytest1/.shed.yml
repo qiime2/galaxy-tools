@@ -1,7 +1,7 @@
 owner: qiime2
 categories:
-  - Sequence Analysis
   - Statistics
+  - Sequence Analysis
   - Metagenomics
 suite:
   name: suite_qiime2dist_tinytest1
