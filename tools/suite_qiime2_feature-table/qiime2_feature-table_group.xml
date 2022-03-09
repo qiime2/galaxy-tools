@@ -464,10 +464,10 @@ for:
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]'}</validator>
         </param>
-        <param name="axis" type="select" label="axis: Str % Choices('feature', 'sample')" help="[required]  Along which axis to group. Each ID in the given axis must exist in `metadata`." display="radio">
+        <param name="axis" type="select" label="axis: Str % Choices('sample', 'feature')" help="[required]  Along which axis to group. Each ID in the given axis must exist in `metadata`." display="radio">
             <option value="__q2galaxy__::literal::None">Selection required</option>
-            <option value="feature">feature</option>
             <option value="sample">sample</option>
+            <option value="feature">feature</option>
             <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
         </param>
         <conditional name="metadata">
@@ -488,11 +488,11 @@ for:
                 </param>
             </when>
         </conditional>
-        <param name="mode" type="select" label="mode: Str % Choices('mean-ceiling', 'sum', 'median-ceiling')" help="[required]  How to combine samples or features within a group. `sum` will sum the frequencies across all samples or features within a group; `mean-ceiling` will take the ceiling of the mean of these frequencies; `median-ceiling` will take the ceiling of the median of these frequencies." display="radio">
+        <param name="mode" type="select" label="mode: Str % Choices('mean-ceiling', 'median-ceiling', 'sum')" help="[required]  How to combine samples or features within a group. `sum` will sum the frequencies across all samples or features within a group; `mean-ceiling` will take the ceiling of the mean of these frequencies; `median-ceiling` will take the ceiling of the median of these frequencies." display="radio">
             <option value="__q2galaxy__::literal::None">Selection required</option>
             <option value="mean-ceiling">mean-ceiling</option>
-            <option value="sum">sum</option>
             <option value="median-ceiling">median-ceiling</option>
+            <option value="sum">sum</option>
             <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
         </param>
     </inputs>

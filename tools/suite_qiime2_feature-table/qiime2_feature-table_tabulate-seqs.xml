@@ -460,8 +460,8 @@ for:
     <inputs>
         <param name="data" type="data" format="qza" label="data: FeatureData[Sequence | AlignedSequence]" help="[required]  The feature sequences to be tabulated.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="FeatureData[Sequence]"/>
                 <filter type="add_value" value="FeatureData[AlignedSequence]"/>
+                <filter type="add_value" value="FeatureData[Sequence]"/>
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureData[Sequence]', 'FeatureData[AlignedSequence]'}</validator>
         </param>
