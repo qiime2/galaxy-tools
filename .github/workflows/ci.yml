@@ -11,14 +11,12 @@ jobs:
       - name: checkout source
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v2
+      - uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: '3.10'
+          auto-activate-base: true
+          activate-environment: ""
 
       - name: render tools
-        run: |
-          $CONDA/bin/conda init bash
-          source ~/.bashrc
-          $CONDA/bin/conda activate base
-          make render
+        shell: bash -l {0}
+        run: make render
