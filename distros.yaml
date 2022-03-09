@@ -16,31 +16,31 @@ distributions:
     default_categories: ['Metagenomics', 'Sequence Analysis', 'Statistics']
     plugins:
      - id: "alignment"
-#  - name: "core"
-#    description: "The QIIME 2 'core' distribution"
-#    default_package: "qiime2-core"
-#    default_channel: "https://packages.qiime2.org/qiime2/2022.2/passed/core/"
-#    default_version: "2022"
-#    default_categories: ['Metagenomics', 'Sequence Analysis', 'Statistics']
-#    plugins:
-#     - id: 'alignment'
-#     - id: 'composition'
-#     - id: 'cutadapt'
-#     - id: 'dada2'
-#     - id: 'deblur'
-#     - id: 'demux'
-#     - id: 'diversity'
-#     - id: 'diversity_lib'
-#     - id: 'emperor'
-#     - id: 'feature_classifier'
-#     - id: 'feature_table'
-#     - id: 'fragment_insertion'
-#     - id: 'gneiss'
-#     - id: 'longitudinal'
-#     - id: 'metadata'
-#     - id: 'phylogeny'
-#     - id: 'quality_control'
-#     - id: 'quality_filter'
-#     - id: 'sample_classifier'
-#     - id: 'taxa'
-#     - id: 'vsearch'
+  - name: "core"
+    description: "The QIIME 2 'core' distribution"
+    default_package: "qiime2-core"
+    default_channel: "https://packages.qiime2.org/qiime2/2022.2/passed/core/"
+    default_version: "2022"
+    default_categories: ['Metagenomics', 'Sequence Analysis', 'Statistics']
+    plugins:
+     - id: 'alignment'
+     - id: 'composition'
+     - id: 'cutadapt'
+     - id: 'dada2'
+     - id: 'deblur'
+     - id: 'demux'
+     - id: 'diversity'
+     - id: 'diversity_lib'
+     - id: 'emperor'
+     - id: 'feature_classifier'
+     - id: 'feature_table'
+     - id: 'fragment_insertion'
+     - id: 'gneiss'
+     - id: 'longitudinal'
+     - id: 'metadata'
+     - id: 'phylogeny'
+     - id: 'quality_control'
+     - id: 'quality_filter'
+     - id: 'sample_classifier'
+     - id: 'taxa'
+     - id: 'vsearch'
