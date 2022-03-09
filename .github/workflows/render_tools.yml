@@ -18,6 +18,7 @@ jobs:
 
       - name: render tools
         run: |
+          $CONDA/bin/conda init bash
           $CONDA/bin/conda activate base
           make render
 
