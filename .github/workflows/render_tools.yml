@@ -1,0 +1,23 @@
+name: render_tools
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source
+        uses: actions/checkout@v2
+
+      - name: render tools
+        run: make render
+
+      - name: create PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Updated tools
+          committer: q2d2 <q2d2.noreply@gmail.com>
+          title: Automated re-render of Galaxy Tools
+          body: Results of `make render` on `main`
