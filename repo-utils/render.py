@@ -34,15 +34,15 @@ def setup_env(package, channel, version):
     env_name = f'{package}@{version}'
     env_prefix = os.path.join(TMP_CONDA_PREFIX, env_name)
     if not os.path.exists(env_prefix):
-        print(f"CONDA CREATE: {env_prefix}")
+        print(f"CONDA CREATE: {env_prefix}", flush=True)
         conda_api.run_command(conda_api.Commands.CREATE, [
             '-p', env_prefix, '-c', 'conda-forge', '-c', 'bioconda',
             '-c', channel, f'{package}={version}'])
     else:
-        print(f"CONDA USING: {env_prefix}")
+        print(f"CONDA USING: {env_prefix}", flush=True)
 
     def run(shell):
-        print(f"RUNNING: {shell}")
+        print(f"RUNNING: {shell}", flush=True)
         stdout, stderr, exit = conda_api.run_command(
             conda_api.Commands.RUN, ['-p', env_prefix, *shell])
         if exit != 0:
@@ -53,7 +53,7 @@ def setup_env(package, channel, version):
 
 
 def render_distro(distro_definition, depends, collections_dir):
-    print(f"DISTRO RENDER: {distro_definition['name']}")
+    print(f"DISTRO RENDER: {distro_definition['name']}", flush=True)
 
     categories = set()
     for s in depends:
@@ -78,7 +78,7 @@ def render_distro(distro_definition, depends, collections_dir):
         fh.write(yaml.dump(shed, default_flow_style=False, sort_keys=False,
                            Dumper=Dumper))
 
-    print(shed)
+    print(shed, flush=True)
 
 
 def render_plugin(plugin, distro_definition, cached_plugins, tools_dir):
@@ -92,7 +92,7 @@ def render_plugin(plugin, distro_definition, cached_plugins, tools_dir):
 
     env_run = setup_env(package, channel, version)
 
-    print(f"PLUGIN RENDER: {id_}")
+    print(f"PLUGIN RENDER: {id_}", flush=True)
     stdout, _ = env_run(['q2galaxy', 'template', 'plugin', id_, tools_dir])
 
     paths = [json.loads(x)['path'] for x in stdout.split('\n') if x]
@@ -131,7 +131,7 @@ def main(distros, dest):
     for distro, depends in tool_collections:
         render_distro(distro, depends, collections_dir)
 
-    print("DONE")
+    print("DONE", flush=True)
 
 
 # repo-utils/render.py distros.yaml tools/

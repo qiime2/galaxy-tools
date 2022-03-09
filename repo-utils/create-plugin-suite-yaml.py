@@ -40,7 +40,7 @@ def main(plugin_id, categories, destination):
         fh.write(yaml.dump(shed, default_flow_style=False, sort_keys=False,
                  Dumper=Dumper))
 
-    print(json.dumps(shed))
+    print(json.dumps(shed), flush=True)
 
 
 if __name__ == '__main__':
