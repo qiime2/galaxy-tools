@@ -3,6 +3,9 @@ name: render_tools
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'tool_collections/**'
+      - 'tools/**'
 
 jobs:
   render:
