@@ -18,7 +18,9 @@ jobs:
 
       - name: render tools
         shell: bash -l {0}
-        run: make render
+        run: |
+          conda install pyyaml
+          make render
 
       - name: create PR
         uses: peter-evans/create-pull-request@v3
