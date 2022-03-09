@@ -17,4 +17,6 @@ jobs:
           python-version: '3.10'
 
       - name: render tools
-        run: make render
+        run: |
+          $CONDA/bin/conda activate base
+          make render
