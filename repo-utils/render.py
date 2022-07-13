@@ -3,6 +3,8 @@
 import os
 import sys
 import json
+import shlex
+import subprocess
 
 import yaml
 import conda.cli.python_api as conda_api
@@ -37,17 +39,49 @@ def setup_env(package, channel, version):
         print(f"CONDA CREATE: {env_prefix}", flush=True)
         conda_api.run_command(conda_api.Commands.CREATE, [
             '-p', env_prefix, '-c', 'conda-forge', '-c', 'bioconda',
-            '-c', channel, f'{package}={version}'])
+            '-c', channel, f'{package}={version}'],
+            stdout=sys.stdout, stderr=sys.stderr)
     else:
         print(f"CONDA USING: {env_prefix}", flush=True)
 
     def run(shell):
-        print(f"RUNNING: {shell}", flush=True)
+        print(f"RUNNING: {shlex.join(shell)}", flush=True)
         stdout, stderr, exit = conda_api.run_command(
             conda_api.Commands.RUN, ['-p', env_prefix, *shell])
         if exit != 0:
             raise Exception(f"Non-zero exit code: {exit}")
         return stdout, stderr
+
+    return run
+
+
+def setup_docker(image, tools_dir):
+    print(f"DOCKER IMAGE: {image}", flush=True)
+    # BAD: sudo used automatically, couldn't think of a straight-forward way
+    # around this without expecting conda to be installed in some very specific
+    # location.
+    subprocess.run(['sudo', 'docker', 'pull', image], check=True)
+
+    def run(shell):
+        print(f"RUNNING: {shlex.join(shell)}:", flush=True)
+        r = subprocess.run([
+                'sudo', 'docker', 'run', '--rm',
+                '--volume', os.getcwd() + ':/tools_dir/',
+                '--workdir', '/tools_dir/',
+                image,
+                'bash', '-c', f'source ~/.bashrc && {shlex.join(shell)}'
+            ], capture_output=True, text=True)
+        if r.stdout:
+            print(r.stdout)
+        if r.stderr:
+            print(r.stderr)
+
+        subprocess.run([
+            'sudo', 'chown', '-R', f'{os.getuid()}:{os.getgid()}', tools_dir],
+            check=True)
+
+        r.check_returncode()
+        return r.stdout, r.stderr
 
     return run
 
@@ -83,14 +117,20 @@ def render_distro(distro_definition, depends, collections_dir):
 
 def render_plugin(plugin, distro_definition, cached_plugins, tools_dir):
     id_ = plugin['id']
-    package = plugin.get('package', distro_definition['default_package'])
-    channel = plugin.get('channel', distro_definition['default_channel'])
     version = plugin.get('version', distro_definition['default_version'])
-    cats = plugin.get('categories', distro_definition['default_categories'])
-
     check_and_add_plugin_cache(id_, version, cached_plugins)
 
-    env_run = setup_env(package, channel, version)
+    docker_image = plugin.get(
+        'docker_image', distro_definition.get('default_docker_image'))
+    if docker_image is None:
+        package = plugin.get('package', distro_definition['default_package'])
+        channel = plugin.get('channel', distro_definition['default_channel'])
+
+        env_run = setup_env(package, channel, version)
+    else:
+        docker_image = docker_image + ':' + version
+        env_run = setup_docker(docker_image, tools_dir)
+
 
     print(f"PLUGIN RENDER: {id_}", flush=True)
     stdout, _ = env_run(['q2galaxy', 'template', 'plugin', id_, tools_dir])
@@ -101,7 +141,17 @@ def render_plugin(plugin, distro_definition, cached_plugins, tools_dir):
     else:
         suite_dir = os.path.relpath(paths[0], tools_dir).split(os.path.sep)[0]
         out_dir = os.path.join(tools_dir, suite_dir)
-    categories = ','.join(cats)
+
+    if docker_image is not None:
+        for path in paths:
+            if not path.endswith('.xml'):
+                continue
+
+            env_run(['repo-utils/swap-in-docker.py', path, docker_image])
+
+
+    categories = ','.join(
+        plugin.get('categories', distro_definition['default_categories']))
 
     stdout, _ = env_run(["repo-utils/create-plugin-suite-yaml.py",
                          id_, categories, out_dir])
