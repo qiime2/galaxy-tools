@@ -1,7 +1,13 @@
-name: render_tools
+name: Render Galaxy Tools
 
 on:
+  workflow_dispatch: {}
   push:
+    branches: [main]
+    paths-ignore:
+      - 'tool_collections/**'
+      - 'tools/**'
+  pull_request:
     branches: [main]
     paths-ignore:
       - 'tool_collections/**'
@@ -27,6 +33,7 @@ jobs:
 
       - name: create PR
         uses: peter-evans/create-pull-request@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           token: ${{ secrets.Q2D2_TOKEN }}
           commit-message: Updated tools

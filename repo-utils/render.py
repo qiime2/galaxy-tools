@@ -63,7 +63,7 @@ def setup_docker(image, tools_dir):
     subprocess.run(['sudo', 'docker', 'pull', image], check=True)
 
     def run(shell):
-        print(f"RUNNING: {shlex.join(shell)}:", flush=True)
+        print(f"RUNNING: {shlex.join(shell)}", flush=True)
         r = subprocess.run([
                 'sudo', 'docker', 'run', '--rm',
                 '--volume', os.getcwd() + ':/tools_dir/',
