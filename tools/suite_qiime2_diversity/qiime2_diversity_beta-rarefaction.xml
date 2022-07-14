@@ -27,35 +27,35 @@ for:
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]'}</validator>
         </param>
-        <param name="metric" type="select" label="metric: Str % Choices('minkowski', 'unweighted_unifrac', 'sqeuclidean', 'hamming', 'canberra_adkins', 'canberra', 'weighted_normalized_unifrac', 'generalized_unifrac', 'euclidean', 'cosine', 'yule', 'correlation', 'jaccard', 'matching', 'sokalsneath', 'aitchison', 'seuclidean', 'jensenshannon', 'rogerstanimoto', 'dice', 'cityblock', 'sokalmichener', 'chebyshev', 'kulsinski', 'weighted_unifrac', 'braycurtis', 'russellrao')" help="[required]  The beta diversity metric to be computed.">
+        <param name="metric" type="select" label="metric: Str % Choices('sokalmichener', 'unweighted_unifrac', 'generalized_unifrac', 'russellrao', 'braycurtis', 'matching', 'aitchison', 'weighted_normalized_unifrac', 'seuclidean', 'dice', 'minkowski', 'canberra', 'sokalsneath', 'kulsinski', 'cosine', 'weighted_unifrac', 'sqeuclidean', 'canberra_adkins', 'cityblock', 'euclidean', 'yule', 'hamming', 'rogerstanimoto', 'jensenshannon', 'chebyshev', 'jaccard', 'correlation')" help="[required]  The beta diversity metric to be computed.">
             <option value="__q2galaxy__::literal::None">Selection required</option>
-            <option value="minkowski">minkowski</option>
-            <option value="unweighted_unifrac">unweighted_unifrac</option>
-            <option value="sqeuclidean">sqeuclidean</option>
-            <option value="hamming">hamming</option>
-            <option value="canberra_adkins">canberra_adkins</option>
-            <option value="canberra">canberra</option>
-            <option value="weighted_normalized_unifrac">weighted_normalized_unifrac</option>
-            <option value="generalized_unifrac">generalized_unifrac</option>
-            <option value="euclidean">euclidean</option>
-            <option value="cosine">cosine</option>
-            <option value="yule">yule</option>
-            <option value="correlation">correlation</option>
-            <option value="jaccard">jaccard</option>
-            <option value="matching">matching</option>
-            <option value="sokalsneath">sokalsneath</option>
-            <option value="aitchison">aitchison</option>
-            <option value="seuclidean">seuclidean</option>
-            <option value="jensenshannon">jensenshannon</option>
-            <option value="rogerstanimoto">rogerstanimoto</option>
-            <option value="dice">dice</option>
-            <option value="cityblock">cityblock</option>
             <option value="sokalmichener">sokalmichener</option>
-            <option value="chebyshev">chebyshev</option>
-            <option value="kulsinski">kulsinski</option>
-            <option value="weighted_unifrac">weighted_unifrac</option>
-            <option value="braycurtis">braycurtis</option>
+            <option value="unweighted_unifrac">unweighted_unifrac</option>
+            <option value="generalized_unifrac">generalized_unifrac</option>
             <option value="russellrao">russellrao</option>
+            <option value="braycurtis">braycurtis</option>
+            <option value="matching">matching</option>
+            <option value="aitchison">aitchison</option>
+            <option value="weighted_normalized_unifrac">weighted_normalized_unifrac</option>
+            <option value="seuclidean">seuclidean</option>
+            <option value="dice">dice</option>
+            <option value="minkowski">minkowski</option>
+            <option value="canberra">canberra</option>
+            <option value="sokalsneath">sokalsneath</option>
+            <option value="kulsinski">kulsinski</option>
+            <option value="cosine">cosine</option>
+            <option value="weighted_unifrac">weighted_unifrac</option>
+            <option value="sqeuclidean">sqeuclidean</option>
+            <option value="canberra_adkins">canberra_adkins</option>
+            <option value="cityblock">cityblock</option>
+            <option value="euclidean">euclidean</option>
+            <option value="yule">yule</option>
+            <option value="hamming">hamming</option>
+            <option value="rogerstanimoto">rogerstanimoto</option>
+            <option value="jensenshannon">jensenshannon</option>
+            <option value="chebyshev">chebyshev</option>
+            <option value="jaccard">jaccard</option>
+            <option value="correlation">correlation</option>
             <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
         </param>
         <param name="clustering_method" type="select" label="clustering_method: Str % Choices('upgma', 'nj')" help="[required]  Samples can be clustered with neighbor joining or UPGMA. An arbitrary rarefaction trial will be used for the tree, and the remaining trials are used to calculate the support of the internal nodes of that tree." display="radio">

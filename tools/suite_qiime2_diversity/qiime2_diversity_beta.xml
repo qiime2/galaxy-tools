@@ -29,31 +29,31 @@ for:
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[PresenceAbsence]', 'FeatureTable[RelativeFrequency]', 'FeatureTable[Frequency]'}</validator>
         </param>
-        <param name="metric" type="select" label="metric: Str % Choices('minkowski', 'sqeuclidean', 'hamming', 'canberra_adkins', 'canberra', 'euclidean', 'cosine', 'yule', 'correlation', 'jaccard', 'matching', 'sokalsneath', 'aitchison', 'seuclidean', 'jensenshannon', 'rogerstanimoto', 'dice', 'cityblock', 'sokalmichener', 'chebyshev', 'kulsinski', 'braycurtis', 'russellrao')" help="[required]  The beta diversity metric to be computed.">
+        <param name="metric" type="select" label="metric: Str % Choices('sokalmichener', 'russellrao', 'braycurtis', 'matching', 'aitchison', 'seuclidean', 'dice', 'minkowski', 'canberra', 'sokalsneath', 'kulsinski', 'cosine', 'sqeuclidean', 'canberra_adkins', 'cityblock', 'euclidean', 'yule', 'hamming', 'rogerstanimoto', 'jensenshannon', 'chebyshev', 'jaccard', 'correlation')" help="[required]  The beta diversity metric to be computed.">
             <option value="__q2galaxy__::literal::None">Selection required</option>
-            <option value="minkowski">minkowski</option>
-            <option value="sqeuclidean">sqeuclidean</option>
-            <option value="hamming">hamming</option>
-            <option value="canberra_adkins">canberra_adkins</option>
-            <option value="canberra">canberra</option>
-            <option value="euclidean">euclidean</option>
-            <option value="cosine">cosine</option>
-            <option value="yule">yule</option>
-            <option value="correlation">correlation</option>
-            <option value="jaccard">jaccard</option>
+            <option value="sokalmichener">sokalmichener</option>
+            <option value="russellrao">russellrao</option>
+            <option value="braycurtis">braycurtis</option>
             <option value="matching">matching</option>
-            <option value="sokalsneath">sokalsneath</option>
             <option value="aitchison">aitchison</option>
             <option value="seuclidean">seuclidean</option>
-            <option value="jensenshannon">jensenshannon</option>
-            <option value="rogerstanimoto">rogerstanimoto</option>
             <option value="dice">dice</option>
-            <option value="cityblock">cityblock</option>
-            <option value="sokalmichener">sokalmichener</option>
-            <option value="chebyshev">chebyshev</option>
+            <option value="minkowski">minkowski</option>
+            <option value="canberra">canberra</option>
+            <option value="sokalsneath">sokalsneath</option>
             <option value="kulsinski">kulsinski</option>
-            <option value="braycurtis">braycurtis</option>
-            <option value="russellrao">russellrao</option>
+            <option value="cosine">cosine</option>
+            <option value="sqeuclidean">sqeuclidean</option>
+            <option value="canberra_adkins">canberra_adkins</option>
+            <option value="cityblock">cityblock</option>
+            <option value="euclidean">euclidean</option>
+            <option value="yule">yule</option>
+            <option value="hamming">hamming</option>
+            <option value="rogerstanimoto">rogerstanimoto</option>
+            <option value="jensenshannon">jensenshannon</option>
+            <option value="chebyshev">chebyshev</option>
+            <option value="jaccard">jaccard</option>
+            <option value="correlation">correlation</option>
             <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">

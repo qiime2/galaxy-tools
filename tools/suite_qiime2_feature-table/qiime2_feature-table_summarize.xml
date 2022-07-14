@@ -27,7 +27,7 @@ for:
                 <filter type="add_value" value="FeatureTable[PresenceAbsence]"/>
                 <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[RelativeFrequency]', 'FeatureTable[Frequency]', 'FeatureTable[PresenceAbsence]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[PresenceAbsence]', 'FeatureTable[RelativeFrequency]'}</validator>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">
             <repeat name="sample_metadata" help="[optional]  The sample metadata." title="sample_metadata: Metadata">

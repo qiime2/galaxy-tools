@@ -24,10 +24,10 @@ for:
         <param name="table" type="data" format="qza" label="table: FeatureTable[Frequency | RelativeFrequency | PresenceAbsence]" help="[required]  The feature table containing the samples for which Jaccard distance should be computed.">
             <options options_filter_attribute="metadata.semantic_type">
                 <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
-                <filter type="add_value" value="FeatureTable[Frequency]"/>
                 <filter type="add_value" value="FeatureTable[PresenceAbsence]"/>
+                <filter type="add_value" value="FeatureTable[Frequency]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[RelativeFrequency]', 'FeatureTable[PresenceAbsence]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[RelativeFrequency]', 'FeatureTable[PresenceAbsence]', 'FeatureTable[Frequency]'}</validator>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">
             <conditional name="__q2galaxy__GUI__conditional__n_jobs__">

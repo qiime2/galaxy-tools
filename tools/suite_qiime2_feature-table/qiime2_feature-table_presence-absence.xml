@@ -26,7 +26,7 @@ for:
                 <filter type="add_value" value="FeatureTable[Frequency]"/>
                 <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[RelativeFrequency]', 'FeatureTable[Frequency]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[RelativeFrequency]'}</validator>
         </param>
     </inputs>
     <outputs>

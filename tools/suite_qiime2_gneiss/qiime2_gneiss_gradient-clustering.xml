@@ -27,7 +27,7 @@ for:
                 <filter type="add_value" value="FeatureTable[Composition]"/>
                 <filter type="add_value" value="FeatureTable[Frequency]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Composition]', 'FeatureTable[Frequency]', 'FeatureTable[RelativeFrequency]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[RelativeFrequency]', 'FeatureTable[Composition]'}</validator>
         </param>
         <conditional name="gradient">
             <param name="type" type="select" label="gradient: MetadataColumn[Numeric]" help="[required]  Contains gradient values to sort the features and samples.">

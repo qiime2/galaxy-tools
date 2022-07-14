@@ -27,7 +27,7 @@ for:
                 <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[SequencesWithQuality]', 'SampleData[JoinedSequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[PairedEndSequencesWithQuality]', 'SampleData[JoinedSequencesWithQuality]', 'SampleData[SequencesWithQuality]'}</validator>
         </param>
         <param name="trim_length" type="integer" value="" label="trim_length: Int" help="[required]  Sequence trim length, specify -1 to disable trimming."/>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">

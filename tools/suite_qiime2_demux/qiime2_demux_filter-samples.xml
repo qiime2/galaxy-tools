@@ -23,11 +23,11 @@ for:
     <inputs>
         <param name="demux" type="data" format="qza" label="demux: SampleData[SequencesWithQuality¹ | PairedEndSequencesWithQuality² | JoinedSequencesWithQuality³]" help="[required]  The demultiplexed data from which samples should be filtered.">
             <options options_filter_attribute="metadata.semantic_type">
+                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
-                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[SequencesWithQuality]', 'SampleData[JoinedSequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[JoinedSequencesWithQuality]', 'SampleData[SequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]'}</validator>
         </param>
         <repeat name="metadata" min="1" help="[required]  Sample metadata indicating which sample ids to filter. The optional `where` parameter may be used to filter ids based on specified conditions in the metadata. The optional `exclude_ids` parameter may be used to exclude the ids specified in the metadata from the filter." title="metadata: Metadata">
             <conditional name="__q2galaxy__GUI__conditional__metadata__">

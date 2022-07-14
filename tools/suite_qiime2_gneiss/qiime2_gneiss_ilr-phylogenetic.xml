@@ -26,7 +26,7 @@ for:
                 <filter type="add_value" value="FeatureTable[Composition]"/>
                 <filter type="add_value" value="FeatureTable[Frequency]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Composition]', 'FeatureTable[Frequency]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[Composition]'}</validator>
         </param>
         <param name="tree" type="data" format="qza" label="tree: Phylogeny[Rooted]" help="[required]  A rooted phylogeny of feature identifiers that defines the partitions of features.  Each tip in the hierarchycorresponds to the feature identifiers in the table. This tree can contain tip ids that are not present in the table, but all feature ids in the table must be present in this tree.  This assumes that all of the internal nodes in the tree have labels. This tree may contain polytomic nodes (i.e., nodes with more than two children), in which case they will be bifurcated.">
             <options options_filter_attribute="metadata.semantic_type">

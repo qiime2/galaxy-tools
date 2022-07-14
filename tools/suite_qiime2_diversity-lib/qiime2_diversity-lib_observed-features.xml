@@ -24,10 +24,10 @@ for:
         <param name="table" type="data" format="qza" label="table: FeatureTable[Frequency | RelativeFrequency | PresenceAbsence]" help="[required]  The feature table containing the samples for which the number of observed features should be calculated. Table values will be converted to presence/absence.">
             <options options_filter_attribute="metadata.semantic_type">
                 <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
-                <filter type="add_value" value="FeatureTable[Frequency]"/>
                 <filter type="add_value" value="FeatureTable[PresenceAbsence]"/>
+                <filter type="add_value" value="FeatureTable[Frequency]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[RelativeFrequency]', 'FeatureTable[PresenceAbsence]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[RelativeFrequency]', 'FeatureTable[PresenceAbsence]', 'FeatureTable[Frequency]'}</validator>
         </param>
     </inputs>
     <outputs>

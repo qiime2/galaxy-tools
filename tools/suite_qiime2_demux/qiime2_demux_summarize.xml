@@ -23,11 +23,11 @@ for:
     <inputs>
         <param name="data" type="data" format="qza" label="data: SampleData[SequencesWithQuality | PairedEndSequencesWithQuality | JoinedSequencesWithQuality]" help="[required]  The demultiplexed sequences to be summarized.">
             <options options_filter_attribute="metadata.semantic_type">
+                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
-                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[SequencesWithQuality]', 'SampleData[JoinedSequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[JoinedSequencesWithQuality]', 'SampleData[SequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]'}</validator>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">
             <param name="n" type="integer" value="10000" label="n: Int" help="[default: 10000]  The number of sequences that should be selected at random for quality score plots. The quality plots will present the average positional qualities across all of the sequences selected. If input sequences are paired end, plots will be generated for both forward and reverse reads for the same `n` sequences."/>

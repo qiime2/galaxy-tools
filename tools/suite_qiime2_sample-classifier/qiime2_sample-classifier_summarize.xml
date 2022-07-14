@@ -23,8 +23,8 @@ for:
     <inputs>
         <param name="sample_estimator" type="data" format="qza" label="sample_estimator: SampleEstimator[Classifier | Regressor]" help="[required]  Sample estimator trained with fit_classifier or fit_regressor.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="SampleEstimator[Classifier]"/>
                 <filter type="add_value" value="SampleEstimator[Regressor]"/>
+                <filter type="add_value" value="SampleEstimator[Classifier]"/>
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleEstimator[Regressor]', 'SampleEstimator[Classifier]'}</validator>
         </param>

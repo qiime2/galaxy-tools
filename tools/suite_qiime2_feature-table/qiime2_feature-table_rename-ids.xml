@@ -25,10 +25,10 @@ for:
             <options options_filter_attribute="metadata.semantic_type">
                 <filter type="add_value" value="FeatureTable[Frequency]"/>
                 <filter type="add_value" value="FeatureTable[PresenceAbsence]"/>
-                <filter type="add_value" value="FeatureTable[Composition]"/>
                 <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
+                <filter type="add_value" value="FeatureTable[Composition]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Composition]', 'FeatureTable[RelativeFrequency]', 'FeatureTable[Frequency]', 'FeatureTable[PresenceAbsence]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[PresenceAbsence]', 'FeatureTable[Composition]', 'FeatureTable[RelativeFrequency]'}</validator>
         </param>
         <conditional name="metadata">
             <param name="type" type="select" label="metadata: MetadataColumn[Categorical]" help="[required]  A metadata column defining the new ids. Each original id must map to a new unique id. If strict mode is used, then every id in the original table must have a new id.">

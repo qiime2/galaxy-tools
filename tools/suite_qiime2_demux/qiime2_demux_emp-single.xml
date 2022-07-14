@@ -27,7 +27,7 @@ for:
                 <filter type="add_value" value="EMPSingleEndSequences"/>
                 <filter type="add_value" value="EMPPairedEndSequences"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'EMPSingleEndSequences', 'RawSequences', 'EMPPairedEndSequences'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'EMPPairedEndSequences', 'RawSequences', 'EMPSingleEndSequences'}</validator>
         </param>
         <conditional name="barcodes">
             <param name="type" type="select" label="barcodes: MetadataColumn[Categorical]" help="[required]  The sample metadata column containing the per-sample barcodes.">

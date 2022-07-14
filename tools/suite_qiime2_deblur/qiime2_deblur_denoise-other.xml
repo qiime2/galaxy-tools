@@ -27,7 +27,7 @@ for:
                 <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[SequencesWithQuality]', 'SampleData[JoinedSequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[PairedEndSequencesWithQuality]', 'SampleData[JoinedSequencesWithQuality]', 'SampleData[SequencesWithQuality]'}</validator>
         </param>
         <param name="reference_seqs" type="data" format="qza" label="reference_seqs: FeatureData[Sequence]" help="[required]  Positive filtering database. Keep all sequences aligning to these sequences.">
             <options options_filter_attribute="metadata.semantic_type">
