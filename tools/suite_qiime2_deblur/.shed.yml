@@ -1,0 +1,15 @@
+owner: qiime2
+homepage_url: https://github.com/biocore/deblur
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: "{{tool_name}}".'
+suite:
+  name: suite_qiime2_deblur
+  description: 'Galaxy suite for QIIME 2 plugin: "qiime2 deblur". Plugin for sequence
+    quality control with Deblur.'
+  long_description: This QIIME 2 plugin wraps the Deblur software for performing sequence
+    quality control.
