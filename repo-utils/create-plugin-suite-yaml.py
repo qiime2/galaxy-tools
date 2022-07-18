@@ -15,7 +15,6 @@ class Dumper(yaml.Dumper):
 
 
 def main(plugin_id, categories, destination):
-    return
     pm = qiime2.sdk.PluginManager()
     plugin = pm.get_plugin(id=plugin_id)
     suite_name = os.path.basename(destination.rstrip("/"))
