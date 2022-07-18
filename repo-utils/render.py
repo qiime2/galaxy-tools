@@ -95,7 +95,7 @@ def render_distro(distro_definition, depends, collections_dir):
 
     name = f"suite_qiime2dist_{distro_definition['name']}"
     shed = {
-        'owner': 'qiime2',
+        'owner': 'q2d2',
         'categories': list(categories),
         'suite': {
             'name': name,
