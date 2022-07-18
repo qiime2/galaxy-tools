@@ -1,0 +1,15 @@
+owner: q2d2
+homepage_url: https://biocore.github.io/gneiss/
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: "{{tool_name}}".'
+suite:
+  name: suite_qiime2_gneiss
+  description: 'Galaxy suite for QIIME 2 plugin: "qiime2 gneiss". Plugin for building
+    compositional models.'
+  long_description: This is a QIIME 2 plugin supporting statistical models on feature
+    tables and metadata using balances.
