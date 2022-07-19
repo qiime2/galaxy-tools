@@ -1,5 +1,6 @@
 owner: q2d2
 homepage_url: https://github.com/qiime2/q2-sample-classifier
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2_sample-classifier
 categories:
   - Metagenomics
   - Sequence Analysis

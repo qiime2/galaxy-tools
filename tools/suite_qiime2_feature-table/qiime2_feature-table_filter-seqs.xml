@@ -23,10 +23,10 @@ for:
     <inputs>
         <param name="data" type="data" format="qza" label="data: FeatureData[Sequence¹ | AlignedSequence²]" help="[required]  The sequences from which features should be filtered.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="FeatureData[AlignedSequence]"/>
                 <filter type="add_value" value="FeatureData[Sequence]"/>
+                <filter type="add_value" value="FeatureData[AlignedSequence]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureData[AlignedSequence]', 'FeatureData[Sequence]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureData[Sequence]', 'FeatureData[AlignedSequence]'}</validator>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">
             <param name="table" type="data" format="qza" optional="true" label="table: FeatureTable[Frequency]" help="[optional]  Table containing feature ids used for id-based filtering.">

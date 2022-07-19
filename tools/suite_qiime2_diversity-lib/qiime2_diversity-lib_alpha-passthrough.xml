@@ -27,34 +27,34 @@ for:
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]'}</validator>
         </param>
-        <param name="metric" type="select" label="metric: Str % Choices('robbins', 'chao1', 'menhinick', 'dominance', 'singles', 'mcintosh_e', 'chao1_ci', 'esty_ci', 'gini_index', 'brillouin_d', 'enspie', 'kempton_taylor_q', 'lladser_pe', 'simpson', 'goods_coverage', 'heip_e', 'simpson_e', 'doubles', 'berger_parker_d', 'michaelis_menten_fit', 'mcintosh_d', 'strong', 'osd', 'ace', 'fisher_alpha', 'margalef')" help="[required]  The alpha diversity metric to be computed.">
+        <param name="metric" type="select" label="metric: Str % Choices('fisher_alpha', 'osd', 'berger_parker_d', 'dominance', 'enspie', 'menhinick', 'ace', 'margalef', 'doubles', 'brillouin_d', 'mcintosh_d', 'robbins', 'singles', 'strong', 'heip_e', 'simpson', 'simpson_e', 'goods_coverage', 'gini_index', 'chao1', 'chao1_ci', 'mcintosh_e', 'michaelis_menten_fit', 'lladser_pe', 'kempton_taylor_q', 'esty_ci')" help="[required]  The alpha diversity metric to be computed.">
             <option value="__q2galaxy__::literal::None">Selection required</option>
-            <option value="robbins">robbins</option>
-            <option value="chao1">chao1</option>
-            <option value="menhinick">menhinick</option>
-            <option value="dominance">dominance</option>
-            <option value="singles">singles</option>
-            <option value="mcintosh_e">mcintosh_e</option>
-            <option value="chao1_ci">chao1_ci</option>
-            <option value="esty_ci">esty_ci</option>
-            <option value="gini_index">gini_index</option>
-            <option value="brillouin_d">brillouin_d</option>
-            <option value="enspie">enspie</option>
-            <option value="kempton_taylor_q">kempton_taylor_q</option>
-            <option value="lladser_pe">lladser_pe</option>
-            <option value="simpson">simpson</option>
-            <option value="goods_coverage">goods_coverage</option>
-            <option value="heip_e">heip_e</option>
-            <option value="simpson_e">simpson_e</option>
-            <option value="doubles">doubles</option>
-            <option value="berger_parker_d">berger_parker_d</option>
-            <option value="michaelis_menten_fit">michaelis_menten_fit</option>
-            <option value="mcintosh_d">mcintosh_d</option>
-            <option value="strong">strong</option>
-            <option value="osd">osd</option>
-            <option value="ace">ace</option>
             <option value="fisher_alpha">fisher_alpha</option>
+            <option value="osd">osd</option>
+            <option value="berger_parker_d">berger_parker_d</option>
+            <option value="dominance">dominance</option>
+            <option value="enspie">enspie</option>
+            <option value="menhinick">menhinick</option>
+            <option value="ace">ace</option>
             <option value="margalef">margalef</option>
+            <option value="doubles">doubles</option>
+            <option value="brillouin_d">brillouin_d</option>
+            <option value="mcintosh_d">mcintosh_d</option>
+            <option value="robbins">robbins</option>
+            <option value="singles">singles</option>
+            <option value="strong">strong</option>
+            <option value="heip_e">heip_e</option>
+            <option value="simpson">simpson</option>
+            <option value="simpson_e">simpson_e</option>
+            <option value="goods_coverage">goods_coverage</option>
+            <option value="gini_index">gini_index</option>
+            <option value="chao1">chao1</option>
+            <option value="chao1_ci">chao1_ci</option>
+            <option value="mcintosh_e">mcintosh_e</option>
+            <option value="michaelis_menten_fit">michaelis_menten_fit</option>
+            <option value="lladser_pe">lladser_pe</option>
+            <option value="kempton_taylor_q">kempton_taylor_q</option>
+            <option value="esty_ci">esty_ci</option>
             <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
         </param>
     </inputs>

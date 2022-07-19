@@ -35,34 +35,34 @@ for:
                 </options>
                 <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'Phylogeny[Rooted]'}</validator>
             </param>
-            <repeat name="metrics" help="[optional]  The metrics to be measured. By default computes observed_features, shannon, and if phylogeny is provided, faith_pd." title="metrics: Set[Str % Choices('ace', 'lladser_pe', 'brillouin_d', 'robbins', 'gini_index', 'observed_features', 'fisher_alpha', 'simpson', 'heip_e', 'simpson_e', 'chao1', 'faith_pd', 'pielou_e', 'mcintosh_d', 'menhinick', 'margalef', 'dominance', 'enspie', 'doubles', 'singles', 'shannon', 'michaelis_menten_fit', 'mcintosh_e', 'berger_parker_d', 'goods_coverage')]">
-                <param name="element" type="select" label="element: Str % Choices('ace', 'lladser_pe', 'brillouin_d', 'robbins', 'gini_index', 'observed_features', 'fisher_alpha', 'simpson', 'heip_e', 'simpson_e', 'chao1', 'faith_pd', 'pielou_e', 'mcintosh_d', 'menhinick', 'margalef', 'dominance', 'enspie', 'doubles', 'singles', 'shannon', 'michaelis_menten_fit', 'mcintosh_e', 'berger_parker_d', 'goods_coverage')" help="[required]">
+            <repeat name="metrics" help="[optional]  The metrics to be measured. By default computes observed_features, shannon, and if phylogeny is provided, faith_pd." title="metrics: Set[Str % Choices('simpson', 'michaelis_menten_fit', 'faith_pd', 'margalef', 'mcintosh_e', 'berger_parker_d', 'singles', 'robbins', 'gini_index', 'pielou_e', 'heip_e', 'lladser_pe', 'simpson_e', 'menhinick', 'doubles', 'brillouin_d', 'fisher_alpha', 'observed_features', 'shannon', 'chao1', 'ace', 'enspie', 'goods_coverage', 'mcintosh_d', 'dominance')]">
+                <param name="element" type="select" label="element: Str % Choices('simpson', 'michaelis_menten_fit', 'faith_pd', 'margalef', 'mcintosh_e', 'berger_parker_d', 'singles', 'robbins', 'gini_index', 'pielou_e', 'heip_e', 'lladser_pe', 'simpson_e', 'menhinick', 'doubles', 'brillouin_d', 'fisher_alpha', 'observed_features', 'shannon', 'chao1', 'ace', 'enspie', 'goods_coverage', 'mcintosh_d', 'dominance')" help="[required]">
                     <option value="__q2galaxy__::literal::None">Selection required</option>
-                    <option value="ace">ace</option>
-                    <option value="lladser_pe">lladser_pe</option>
-                    <option value="brillouin_d">brillouin_d</option>
-                    <option value="robbins">robbins</option>
-                    <option value="gini_index">gini_index</option>
-                    <option value="observed_features">observed_features</option>
-                    <option value="fisher_alpha">fisher_alpha</option>
                     <option value="simpson">simpson</option>
-                    <option value="heip_e">heip_e</option>
-                    <option value="simpson_e">simpson_e</option>
-                    <option value="chao1">chao1</option>
-                    <option value="faith_pd">faith_pd</option>
-                    <option value="pielou_e">pielou_e</option>
-                    <option value="mcintosh_d">mcintosh_d</option>
-                    <option value="menhinick">menhinick</option>
-                    <option value="margalef">margalef</option>
-                    <option value="dominance">dominance</option>
-                    <option value="enspie">enspie</option>
-                    <option value="doubles">doubles</option>
-                    <option value="singles">singles</option>
-                    <option value="shannon">shannon</option>
                     <option value="michaelis_menten_fit">michaelis_menten_fit</option>
+                    <option value="faith_pd">faith_pd</option>
+                    <option value="margalef">margalef</option>
                     <option value="mcintosh_e">mcintosh_e</option>
                     <option value="berger_parker_d">berger_parker_d</option>
+                    <option value="singles">singles</option>
+                    <option value="robbins">robbins</option>
+                    <option value="gini_index">gini_index</option>
+                    <option value="pielou_e">pielou_e</option>
+                    <option value="heip_e">heip_e</option>
+                    <option value="lladser_pe">lladser_pe</option>
+                    <option value="simpson_e">simpson_e</option>
+                    <option value="menhinick">menhinick</option>
+                    <option value="doubles">doubles</option>
+                    <option value="brillouin_d">brillouin_d</option>
+                    <option value="fisher_alpha">fisher_alpha</option>
+                    <option value="observed_features">observed_features</option>
+                    <option value="shannon">shannon</option>
+                    <option value="chao1">chao1</option>
+                    <option value="ace">ace</option>
+                    <option value="enspie">enspie</option>
                     <option value="goods_coverage">goods_coverage</option>
+                    <option value="mcintosh_d">mcintosh_d</option>
+                    <option value="dominance">dominance</option>
                     <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
                 </param>
             </repeat>

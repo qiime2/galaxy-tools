@@ -27,7 +27,7 @@ for:
                 <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[JoinedSequencesWithQuality]', 'SampleData[SequencesWithQuality]', 'SampleData[Sequences]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[SequencesWithQuality]', 'SampleData[JoinedSequencesWithQuality]', 'SampleData[Sequences]'}</validator>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">
             <param name="derep_prefix" type="boolean" truevalue="__q2galaxy__::literal::True" falsevalue="__q2galaxy__::literal::False" label="derep_prefix: Bool" help="[default: No]  Merge sequences with identical prefixes. If a sequence is identical to the prefix of two or more longer sequences, it is clustered with the shortest of them. If they are equally long, it is clustered with the most abundant."/>

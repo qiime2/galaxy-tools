@@ -27,7 +27,7 @@ for:
                 <filter type="add_value" value="FeatureTable[PresenceAbsence]"/>
                 <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[PresenceAbsence]', 'FeatureTable[RelativeFrequency]', 'FeatureTable[Frequency]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[PresenceAbsence]', 'FeatureTable[RelativeFrequency]'}</validator>
         </param>
         <param name="tree" type="data" format="qza" label="tree: Phylogeny[Rooted | Unrooted]" help="[required]  Tree where tip identifiers are the feature identifiers that should be retained in the table.">
             <options options_filter_attribute="metadata.semantic_type">
