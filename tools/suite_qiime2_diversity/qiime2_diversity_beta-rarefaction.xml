@@ -27,41 +27,41 @@ for:
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]'}</validator>
         </param>
-        <param name="metric" type="select" label="metric: Str % Choices('rogerstanimoto', 'aitchison', 'chebyshev', 'sqeuclidean', 'cosine', 'unweighted_unifrac', 'weighted_normalized_unifrac', 'russellrao', 'jensenshannon', 'seuclidean', 'minkowski', 'kulsinski', 'correlation', 'hamming', 'dice', 'canberra', 'euclidean', 'yule', 'generalized_unifrac', 'matching', 'sokalmichener', 'weighted_unifrac', 'canberra_adkins', 'jaccard', 'cityblock', 'sokalsneath', 'braycurtis')" help="[required]  The beta diversity metric to be computed.">
+        <param name="metric" type="select" label="metric: Str % Choices('matching', 'chebyshev', 'aitchison', 'sokalsneath', 'canberra', 'seuclidean', 'russellrao', 'cosine', 'jensenshannon', 'braycurtis', 'rogerstanimoto', 'weighted_normalized_unifrac', 'unweighted_unifrac', 'weighted_unifrac', 'dice', 'euclidean', 'kulsinski', 'hamming', 'sokalmichener', 'minkowski', 'cityblock', 'correlation', 'generalized_unifrac', 'sqeuclidean', 'yule', 'jaccard', 'canberra_adkins')" help="[required]  The beta diversity metric to be computed.">
             <option value="__q2galaxy__::literal::None">Selection required</option>
-            <option value="rogerstanimoto">rogerstanimoto</option>
-            <option value="aitchison">aitchison</option>
-            <option value="chebyshev">chebyshev</option>
-            <option value="sqeuclidean">sqeuclidean</option>
-            <option value="cosine">cosine</option>
-            <option value="unweighted_unifrac">unweighted_unifrac</option>
-            <option value="weighted_normalized_unifrac">weighted_normalized_unifrac</option>
-            <option value="russellrao">russellrao</option>
-            <option value="jensenshannon">jensenshannon</option>
-            <option value="seuclidean">seuclidean</option>
-            <option value="minkowski">minkowski</option>
-            <option value="kulsinski">kulsinski</option>
-            <option value="correlation">correlation</option>
-            <option value="hamming">hamming</option>
-            <option value="dice">dice</option>
-            <option value="canberra">canberra</option>
-            <option value="euclidean">euclidean</option>
-            <option value="yule">yule</option>
-            <option value="generalized_unifrac">generalized_unifrac</option>
             <option value="matching">matching</option>
-            <option value="sokalmichener">sokalmichener</option>
-            <option value="weighted_unifrac">weighted_unifrac</option>
-            <option value="canberra_adkins">canberra_adkins</option>
-            <option value="jaccard">jaccard</option>
-            <option value="cityblock">cityblock</option>
+            <option value="chebyshev">chebyshev</option>
+            <option value="aitchison">aitchison</option>
             <option value="sokalsneath">sokalsneath</option>
+            <option value="canberra">canberra</option>
+            <option value="seuclidean">seuclidean</option>
+            <option value="russellrao">russellrao</option>
+            <option value="cosine">cosine</option>
+            <option value="jensenshannon">jensenshannon</option>
             <option value="braycurtis">braycurtis</option>
+            <option value="rogerstanimoto">rogerstanimoto</option>
+            <option value="weighted_normalized_unifrac">weighted_normalized_unifrac</option>
+            <option value="unweighted_unifrac">unweighted_unifrac</option>
+            <option value="weighted_unifrac">weighted_unifrac</option>
+            <option value="dice">dice</option>
+            <option value="euclidean">euclidean</option>
+            <option value="kulsinski">kulsinski</option>
+            <option value="hamming">hamming</option>
+            <option value="sokalmichener">sokalmichener</option>
+            <option value="minkowski">minkowski</option>
+            <option value="cityblock">cityblock</option>
+            <option value="correlation">correlation</option>
+            <option value="generalized_unifrac">generalized_unifrac</option>
+            <option value="sqeuclidean">sqeuclidean</option>
+            <option value="yule">yule</option>
+            <option value="jaccard">jaccard</option>
+            <option value="canberra_adkins">canberra_adkins</option>
             <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
         </param>
-        <param name="clustering_method" type="select" label="clustering_method: Str % Choices('upgma', 'nj')" help="[required]  Samples can be clustered with neighbor joining or UPGMA. An arbitrary rarefaction trial will be used for the tree, and the remaining trials are used to calculate the support of the internal nodes of that tree." display="radio">
+        <param name="clustering_method" type="select" label="clustering_method: Str % Choices('nj', 'upgma')" help="[required]  Samples can be clustered with neighbor joining or UPGMA. An arbitrary rarefaction trial will be used for the tree, and the remaining trials are used to calculate the support of the internal nodes of that tree." display="radio">
             <option value="__q2galaxy__::literal::None">Selection required</option>
-            <option value="upgma">upgma</option>
             <option value="nj">nj</option>
+            <option value="upgma">upgma</option>
             <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
         </param>
         <repeat name="metadata" min="1" help="[required]  The sample metadata used for the Emperor jackknifed PCoA plot." title="metadata: Metadata">

@@ -33,12 +33,12 @@ for:
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'Phylogeny[Rooted]'}</validator>
         </param>
-        <param name="metric" type="select" label="metric: Str % Choices('generalized_unifrac', 'weighted_normalized_unifrac', 'weighted_unifrac', 'unweighted_unifrac')" help="[required]  The beta diversity metric to be computed." display="radio">
+        <param name="metric" type="select" label="metric: Str % Choices('unweighted_unifrac', 'weighted_unifrac', 'weighted_normalized_unifrac', 'generalized_unifrac')" help="[required]  The beta diversity metric to be computed." display="radio">
             <option value="__q2galaxy__::literal::None">Selection required</option>
-            <option value="generalized_unifrac">generalized_unifrac</option>
-            <option value="weighted_normalized_unifrac">weighted_normalized_unifrac</option>
-            <option value="weighted_unifrac">weighted_unifrac</option>
             <option value="unweighted_unifrac">unweighted_unifrac</option>
+            <option value="weighted_unifrac">weighted_unifrac</option>
+            <option value="weighted_normalized_unifrac">weighted_normalized_unifrac</option>
+            <option value="generalized_unifrac">generalized_unifrac</option>
             <validator type="expression" message="Please verify this parameter.">value != '__q2galaxy__::literal::None'</validator>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">

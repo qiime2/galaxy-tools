@@ -24,10 +24,10 @@ for:
         <param name="table" type="data" format="qza" label="table: FeatureTable[Frequency | RelativeFrequency | Composition]" help="[required]  The feature table containing the samples in which the columns will be clustered.">
             <options options_filter_attribute="metadata.semantic_type">
                 <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
-                <filter type="add_value" value="FeatureTable[Frequency]"/>
                 <filter type="add_value" value="FeatureTable[Composition]"/>
+                <filter type="add_value" value="FeatureTable[Frequency]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[Composition]', 'FeatureTable[RelativeFrequency]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'FeatureTable[Frequency]', 'FeatureTable[RelativeFrequency]', 'FeatureTable[Composition]'}</validator>
         </param>
         <conditional name="gradient">
             <param name="type" type="select" label="gradient: MetadataColumn[Numeric]" help="[required]  Contains gradient values to sort the features and samples.">

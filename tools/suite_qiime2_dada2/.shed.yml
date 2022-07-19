@@ -1,5 +1,6 @@
 owner: q2d2
 homepage_url: http://benjjneb.github.io/dada2/
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2_dada2
 categories:
   - Metagenomics
   - Sequence Analysis

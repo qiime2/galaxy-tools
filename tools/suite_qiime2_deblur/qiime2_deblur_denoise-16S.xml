@@ -23,11 +23,11 @@ for:
     <inputs>
         <param name="demultiplexed_seqs" type="data" format="qza" label="demultiplexed_seqs: SampleData[SequencesWithQuality | PairedEndSequencesWithQuality | JoinedSequencesWithQuality]" help="[required]  The demultiplexed sequences to be denoised.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
-                <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
+                <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
+                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[PairedEndSequencesWithQuality]', 'SampleData[SequencesWithQuality]', 'SampleData[JoinedSequencesWithQuality]'}</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in {'SampleData[JoinedSequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]', 'SampleData[SequencesWithQuality]'}</validator>
         </param>
         <param name="trim_length" type="integer" value="" label="trim_length: Int" help="[required]  Sequence trim length, specify -1 to disable trimming."/>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">
