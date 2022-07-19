@@ -22,6 +22,8 @@ def main(plugin_id, categories, destination):
     shed = {
         'owner': 'q2d2',
         'homepage_url': plugin.website,
+        'remote_repository_url': (f'https://github.com/qiime2/galaxy-tools'
+                                  f'/tree/main/tools/{suite_name}'),
         'categories': categories,
         'auto_tool_repositories': {
             'name_template': '{{ tool_id }}',
@@ -41,6 +43,13 @@ def main(plugin_id, categories, destination):
                  Dumper=Dumper))
 
     print(json.dumps(shed), flush=True)
+
+    # HACK: not all tools have example data, and while q2galaxy will create the
+    # empty directory, git won't keep it.
+    test_dir = os.path.join(destination, 'test-data/')
+    if not os.listdir(test_dir):
+        with open(os.path.join(test_dir, '.gitkeep'), 'w') as fh:
+            pass
 
 
 if __name__ == '__main__':
