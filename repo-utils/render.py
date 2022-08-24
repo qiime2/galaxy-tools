@@ -160,6 +160,47 @@ def render_plugin(plugin, distro_definition, cached_plugins, tools_dir):
     return json.loads(stdout)
 
 
+def render_tools(distro_definition, tools_dir):
+    version = distro_definition['default_version']
+    categories = ','.join(distro_definition['default_categories'])
+
+    docker_image = distro_definition.get('default_docker_image')
+    if docker_image is None:
+        package = distro_definition['default_package']
+        channel = distro_definition['default_channel']
+
+        env_run = setup_env(package, channel, version)
+    else:
+        docker_image = docker_image + ':' + version
+        env_run = setup_docker(docker_image, tools_dir)
+
+    print('DISTRO TOOLS RENDER', flush=True)
+    stdout, _ = env_run([
+        'q2galaxy', 'template', 'builtins',
+        '--distro', distro_definition['name'],
+        tools_dir])
+
+    paths = [json.loads(x)['path'] for x in stdout.split('\n') if x]
+    if len(paths) > 1:
+        out_dir = os.path.commonpath(paths)
+    else:
+        suite_dir = os.path.relpath(paths[0], tools_dir).split(os.path.sep)[0]
+        out_dir = os.path.join(tools_dir, suite_dir)
+
+    if docker_image is not None:
+        for path in paths:
+            if not path.endswith('.xml'):
+                continue
+
+            env_run(['repo-utils/swap-in-docker.py', path, docker_image])
+
+
+    stdout, _ = env_run(["repo-utils/create-builtin-suite-yaml.py",
+                         distro_definition['name'], categories, out_dir])
+
+    return json.loads(stdout)
+
+
 def main(distros, dest):
     cached_distros = set()
     cached_plugins = {}
@@ -173,6 +214,9 @@ def main(distros, dest):
         check_and_add_distro_cache(distro['name'], cached_distros)
 
         depends = []
+        shed = render_tools(distro, tools_dir)
+        depends.append(shed)
+
         for plugin in distro['plugins']:
             shed = render_plugin(plugin, distro, cached_plugins, tools_dir)
             depends.append(shed)
