@@ -1,0 +1,16 @@
+owner: q2d2
+homepage_url: https://github.com/qiime2/q2-phylogeny
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2__phylogeny
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: "{{tool_name}}".'
+suite:
+  name: suite_qiime2__phylogeny
+  description: 'Galaxy suite for QIIME 2 plugin: "qiime2 phylogeny". Plugin for generating
+    and manipulating phylogenies.'
+  long_description: This QIIME 2 plugin supports generating and manipulating phylogenetic
+    trees.
