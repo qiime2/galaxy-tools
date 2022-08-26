@@ -87,6 +87,7 @@ def setup_docker(image, tools_dir):
 
 
 def render_distro(distro_definition, depends, collections_dir):
+    return
     print(f"DISTRO RENDER: {distro_definition['name']}", flush=True)
 
     categories = set()
