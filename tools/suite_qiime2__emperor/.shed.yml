@@ -1,0 +1,16 @@
+owner: q2d2
+homepage_url: http://emperor.microbio.me
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2__emperor
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
+suite:
+  name: suite_qiime2__emperor
+  description: 'Galaxy suite for QIIME 2 plugin: ''emperor''. Plugin for ordination
+    plotting with Emperor.'
+  long_description: This QIIME 2 plugin wraps Emperor and supports interactive visualization
+    of ordination plots.
