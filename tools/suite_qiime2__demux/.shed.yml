@@ -11,6 +11,6 @@ auto_tool_repositories:
 suite:
   name: suite_qiime2__demux
   description: 'Galaxy suite for QIIME 2 plugin: ''demux''. Plugin for demultiplexing
-    & viewing sequence quality.'
+    &amp; viewing sequence quality.'
   long_description: This QIIME 2 plugin supports demultiplexing of single-end and
     paired-end sequence reads and visualization of sequence quality information.
