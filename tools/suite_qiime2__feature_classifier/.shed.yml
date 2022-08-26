@@ -10,7 +10,7 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__feature_classifier
-  description: 'Galaxy suite for QIIME 2 plugin: ''feature-classifier''. Plugin for
-    taxonomic classification.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''feature-classifier''. Plugin for
+    taxonomic classification."'
   long_description: This QIIME 2 plugin supports taxonomic classification of features
     using a variety of methods, including Naive Bayes, vsearch, and BLAST+.

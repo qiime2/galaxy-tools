@@ -10,7 +10,7 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__sample_classifier
-  description: 'Galaxy suite for QIIME 2 plugin: ''sample-classifier''. Plugin for
-    machine learning prediction of sample metadata.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''sample-classifier''. Plugin for
+    machine learning prediction of sample metadata."'
   long_description: This QIIME 2 plugin supports methods for supervised classification
     and regression of sample metadata, and other supervised machine learning methods.

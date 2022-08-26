@@ -10,7 +10,7 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__vsearch
-  description: 'Galaxy suite for QIIME 2 plugin: ''vsearch''. Plugin for clustering
-    and dereplicating with vsearch.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''vsearch''. Plugin for clustering
+    and dereplicating with vsearch."'
   long_description: This plugin wraps the vsearch application, and provides methods
     for clustering and dereplicating features and sequences.

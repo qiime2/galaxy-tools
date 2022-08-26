@@ -10,8 +10,8 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__diversity
-  description: 'Galaxy suite for QIIME 2 plugin: ''diversity''. Plugin for exploring
-    community diversity.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''diversity''. Plugin for exploring
+    community diversity."'
   long_description: This QIIME 2 plugin supports metrics for calculating and exploring
     community alpha and beta diversity through statistics and visualizations in the
     context of sample metadata.

@@ -10,7 +10,7 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__longitudinal
-  description: 'Galaxy suite for QIIME 2 plugin: ''longitudinal''. Plugin for paired
-    sample and time series analyses.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''longitudinal''. Plugin for paired
+    sample and time series analyses."'
   long_description: This QIIME 2 plugin supports methods for analysis of time series
     data, involving either paired sample comparisons or longitudinal study designs.

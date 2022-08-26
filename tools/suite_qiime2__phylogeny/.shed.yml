@@ -10,7 +10,7 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__phylogeny
-  description: 'Galaxy suite for QIIME 2 plugin: ''phylogeny''. Plugin for generating
-    and manipulating phylogenies.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''phylogeny''. Plugin for generating
+    and manipulating phylogenies."'
   long_description: This QIIME 2 plugin supports generating and manipulating phylogenetic
     trees.

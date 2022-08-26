@@ -1,0 +1,53 @@
+owner: q2d2
+categories:
+  - Sequence Analysis
+  - Metagenomics
+  - Statistics
+suite:
+  name: suite_qiime2dist_core
+  description: '"The QIIME 2 ''core'' distribution"'
+  include_repositories:
+    - name: suite_qiime2_core__tools
+      owner: q2d2
+    - name: suite_qiime2__alignment
+      owner: q2d2
+    - name: suite_qiime2__composition
+      owner: q2d2
+    - name: suite_qiime2__cutadapt
+      owner: q2d2
+    - name: suite_qiime2__dada2
+      owner: q2d2
+    - name: suite_qiime2__deblur
+      owner: q2d2
+    - name: suite_qiime2__demux
+      owner: q2d2
+    - name: suite_qiime2__diversity
+      owner: q2d2
+    - name: suite_qiime2__diversity_lib
+      owner: q2d2
+    - name: suite_qiime2__emperor
+      owner: q2d2
+    - name: suite_qiime2__feature_classifier
+      owner: q2d2
+    - name: suite_qiime2__feature_table
+      owner: q2d2
+    - name: suite_qiime2__fragment_insertion
+      owner: q2d2
+    - name: suite_qiime2__gneiss
+      owner: q2d2
+    - name: suite_qiime2__longitudinal
+      owner: q2d2
+    - name: suite_qiime2__metadata
+      owner: q2d2
+    - name: suite_qiime2__phylogeny
+      owner: q2d2
+    - name: suite_qiime2__quality_control
+      owner: q2d2
+    - name: suite_qiime2__quality_filter
+      owner: q2d2
+    - name: suite_qiime2__sample_classifier
+      owner: q2d2
+    - name: suite_qiime2__taxa
+      owner: q2d2
+    - name: suite_qiime2__vsearch
+      owner: q2d2

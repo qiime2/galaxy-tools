@@ -10,7 +10,7 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__quality_filter
-  description: 'Galaxy suite for QIIME 2 plugin: ''quality-filter''. Plugin for PHRED-based
-    filtering and trimming.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''quality-filter''. Plugin for PHRED-based
+    filtering and trimming."'
   long_description: This QIIME 2 plugin supports filtering and trimming of sequence
     reads based on PHRED scores and ambiguous nucleotide characters.

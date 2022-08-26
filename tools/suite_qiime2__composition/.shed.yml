@@ -10,6 +10,6 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__composition
-  description: 'Galaxy suite for QIIME 2 plugin: ''composition''. Plugin for compositional
-    data analysis.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''composition''. Plugin for compositional
+    data analysis."'
   long_description: This QIIME 2 plugin supports methods for compositional data analysis.

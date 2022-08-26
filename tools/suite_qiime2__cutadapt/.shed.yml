@@ -10,7 +10,7 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__cutadapt
-  description: 'Galaxy suite for QIIME 2 plugin: ''cutadapt''. Plugin for removing
-    adapter sequences, primers, and other unwanted sequence from sequence data.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''cutadapt''. Plugin for removing
+    adapter sequences, primers, and other unwanted sequence from sequence data."'
   long_description: This QIIME 2 plugin uses cutadapt to work with adapters (e.g.
     barcodes, primers) in sequence data.

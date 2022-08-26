@@ -10,7 +10,7 @@ auto_tool_repositories:
   description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__diversity_lib
-  description: 'Galaxy suite for QIIME 2 plugin: ''diversity-lib''. Plugin for computing
-    community diversity.'
+  description: '"Galaxy suite for QIIME 2 plugin: ''diversity-lib''. Plugin for computing
+    community diversity."'
   long_description: This QIIME 2 plugin computes individual metrics for  community
     alpha and beta diversity.
