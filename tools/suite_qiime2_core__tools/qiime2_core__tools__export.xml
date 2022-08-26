@@ -427,7 +427,7 @@ for:
     </inputs>
     <outputs>
         <collection name="exported" type="list" label="${tool.name} on ${on_string} as ${fmt_peek}">
-            <filter>fmt_finder['output_format'] == 'None' and fmt_peek not in {'PredictionsDirectoryFormat', 'ProcrustesStatisticsFmt', 'SingleLanePerSamplePairedEndFastqDirFmt', 'BooleanSeriesDirectoryFormat', 'ProbabilitiesDirectoryFormat', 'EMPPairedEndDirFmt', 'FirstDifferencesFormat', 'ArtificialGroupingDirectoryFormat', 'CasavaOneEightSingleLanePerSampleDirFmt', 'OrdinationFormat', 'MultiplexedSingleEndBarcodeInSequenceDirFmt', 'AlignedDNASequencesDirectoryFormat', 'Bowtie2IndexDirFmt', 'BLAST6DirectoryFormat', 'PlacementsFormat', 'PlacementsDirFmt', 'SampleEstimatorDirFmt', 'QualityFilterStatsDirFmt', 'ImportanceDirectoryFormat', 'SingleLanePerSampleSingleEndFastqDirFmt', 'DNASequencesDirectoryFormat', 'AlignedRNAFASTAFormat', 'NewickDirectoryFormat', 'ProcrustesStatisticsDirFmt', 'DistanceMatrixDirectoryFormat', 'UchimeStatsDirFmt', 'BIOMV210DirFmt', 'AlignedProteinSequencesDirectoryFormat', 'TrueTargetsDirectoryFormat', 'ImportanceFormat', 'ErrorCorrectionDetailsDirFmt', 'AlignedRNASequencesDirectoryFormat', 'ProbabilitiesFormat', 'EMPSingleEndDirFmt', 'BIOMV210Format', 'SeppReferenceDirFmt', 'DifferentialDirectoryFormat', 'AlignedDNAFASTAFormat', 'QIIME1DemuxFormat', 'TaxonomicClassiferTemporaryPickleDirFmt', 'AlphaDiversityFormat', 'PairedDNASequencesDirectoryFormat', 'FirstDifferencesDirectoryFormat', 'DeblurStatsDirFmt', 'PairedRNASequencesDirectoryFormat', 'BLAST6Format', 'DADA2StatsFormat', 'LSMatFormat', 'PredictionsFormat', 'ProteinFASTAFormat', 'NewickFormat', 'DeblurStatsFmt', 'BooleanSeriesFormat', 'MultiplexedPairedEndBarcodeInSequenceDirFmt', 'RNASequencesDirectoryFormat', 'UchimeStatsFmt', 'DifferentialFormat', 'AlphaDiversityDirectoryFormat', 'QIIME1DemuxDirFmt', 'DADA2StatsDirFmt', 'OrdinationDirectoryFormat', 'ProteinSequencesDirectoryFormat', 'TSVTaxonomyFormat', 'DNAFASTAFormat', 'AlignedProteinFASTAFormat', 'QualityFilterStatsFmt', 'FastqGzFormat', 'ArtificialGroupingFormat', 'RNAFASTAFormat', 'TSVTaxonomyDirectoryFormat'}</filter>
+            <filter>fmt_finder['output_format'] == 'None' and fmt_peek not in {'ProbabilitiesFormat', 'RNASequencesDirectoryFormat', 'DifferentialFormat', 'ProcrustesStatisticsDirFmt', 'OrdinationFormat', 'DeblurStatsFmt', 'AlignedDNAFASTAFormat', 'MultiplexedSingleEndBarcodeInSequenceDirFmt', 'AlignedDNASequencesDirectoryFormat', 'OrdinationDirectoryFormat', 'DADA2StatsDirFmt', 'Bowtie2IndexDirFmt', 'AlignedRNASequencesDirectoryFormat', 'BIOMV210Format', 'FastqGzFormat', 'DistanceMatrixDirectoryFormat', 'DADA2StatsFormat', 'ProcrustesStatisticsFmt', 'PlacementsFormat', 'LSMatFormat', 'ProbabilitiesDirectoryFormat', 'DNAFASTAFormat', 'TSVTaxonomyFormat', 'AlignedProteinFASTAFormat', 'QIIME1DemuxDirFmt', 'PlacementsDirFmt', 'ErrorCorrectionDetailsDirFmt', 'AlignedProteinSequencesDirectoryFormat', 'FirstDifferencesFormat', 'MultiplexedPairedEndBarcodeInSequenceDirFmt', 'ArtificialGroupingFormat', 'AlignedRNAFASTAFormat', 'QualityFilterStatsFmt', 'BLAST6DirectoryFormat', 'RNAFASTAFormat', 'PredictionsFormat', 'PairedDNASequencesDirectoryFormat', 'SampleEstimatorDirFmt', 'ArtificialGroupingDirectoryFormat', 'NewickDirectoryFormat', 'PairedRNASequencesDirectoryFormat', 'FirstDifferencesDirectoryFormat', 'ProteinFASTAFormat', 'TaxonomicClassiferTemporaryPickleDirFmt', 'AlphaDiversityFormat', 'CasavaOneEightSingleLanePerSampleDirFmt', 'SingleLanePerSamplePairedEndFastqDirFmt', 'BooleanSeriesDirectoryFormat', 'UchimeStatsDirFmt', 'ProteinSequencesDirectoryFormat', 'EMPSingleEndDirFmt', 'DeblurStatsDirFmt', 'DifferentialDirectoryFormat', 'ImportanceDirectoryFormat', 'UchimeStatsFmt', 'AlphaDiversityDirectoryFormat', 'EMPPairedEndDirFmt', 'QualityFilterStatsDirFmt', 'SeppReferenceDirFmt', 'ImportanceFormat', 'BooleanSeriesFormat', 'QIIME1DemuxFormat', 'SingleLanePerSampleSingleEndFastqDirFmt', 'DNASequencesDirectoryFormat', 'PredictionsDirectoryFormat', 'BIOMV210DirFmt', 'TSVTaxonomyDirectoryFormat', 'NewickFormat', 'BLAST6Format', 'TrueTargetsDirectoryFormat'}</filter>
             <discover_datasets pattern="__designation_and_ext__" visible="false"/>
         </collection>
         <data name="AlignedDNAFASTAFormat" label="${tool.name} on ${on_string} as AlignedDNAFASTAFormat">
@@ -760,6 +760,12 @@ Formats:
 --------
 These formats have documentation available.
 
+FastqGzFormat
+*************
+
+A gzipped fastq file.
+
+
 TSVTaxonomyFormat
 *****************
 Format for a 2+ column TSV file with an expected minimal header.
@@ -773,12 +779,6 @@ Optionally followed by other arbitrary columns.
 This format supports blank lines. The expected header must be the first
 non-blank line. In addition to the header, there must be at least one line
 of data.
-
-
-FastqGzFormat
-*************
-
-A gzipped fastq file.
 
 
 QIIME1DemuxFormat
@@ -819,71 +819,71 @@ Additional formats without documentation:
 *****************************************
  - AlignedRNAFASTAFormat
  - NewickDirectoryFormat
- - QualityFilterStatsFmt
- - ProbabilitiesFormat
- - DeblurStatsFmt
+ - SeppReferenceDirFmt
+ - UchimeStatsFmt
+ - FirstDifferencesDirectoryFormat
+ - ImportanceDirectoryFormat
  - AlignedDNAFASTAFormat
- - ImportanceFormat
- - ErrorCorrectionDetailsDirFmt
- - PredictionsDirectoryFormat
+ - ArtificialGroupingDirectoryFormat
  - ProcrustesStatisticsFmt
- - SampleEstimatorDirFmt
+ - PlacementsDirFmt
  - BLAST6DirectoryFormat
  - PairedDNASequencesDirectoryFormat
  - MultiplexedPairedEndBarcodeInSequenceDirFmt
  - AlphaDiversityFormat
  - LSMatFormat
- - BIOMV210Format
+ - PredictionsDirectoryFormat
+ - TaxonomicClassiferTemporaryPickleDirFmt
  - OrdinationFormat
- - PlacementsFormat
+ - BooleanSeriesFormat
+ - SingleLanePerSamplePairedEndFastqDirFmt
  - AlignedProteinSequencesDirectoryFormat
  - RNAFASTAFormat
- - PlacementsDirFmt
- - SingleLanePerSamplePairedEndFastqDirFmt
+ - BIOMV210DirFmt
+ - QualityFilterStatsFmt
+ - PredictionsFormat
+ - DeblurStatsFmt
  - ProteinSequencesDirectoryFormat
  - DNAFASTAFormat
- - EMPSingleEndDirFmt
- - TaxonomicClassiferTemporaryPickleDirFmt
+ - DADA2StatsDirFmt
  - DifferentialDirectoryFormat
  - TSVTaxonomyDirectoryFormat
- - ArtificialGroupingFormat
- - DADA2StatsDirFmt
- - UchimeStatsDirFmt
+ - DeblurStatsDirFmt
+ - PlacementsFormat
  - AlignedRNASequencesDirectoryFormat
+ - TrueTargetsDirectoryFormat
+ - UchimeStatsDirFmt
+ - EMPPairedEndDirFmt
  - BooleanSeriesDirectoryFormat
- - QualityFilterStatsDirFmt
- - FirstDifferencesDirectoryFormat
- - ProbabilitiesDirectoryFormat
  - MultiplexedSingleEndBarcodeInSequenceDirFmt
- - BooleanSeriesFormat
+ - ProbabilitiesFormat
  - AlignedDNASequencesDirectoryFormat
  - NewickFormat
- - ImportanceDirectoryFormat
  - ProcrustesStatisticsDirFmt
- - PredictionsFormat
+ - ErrorCorrectionDetailsDirFmt
+ - ImportanceFormat
  - PairedRNASequencesDirectoryFormat
- - DeblurStatsDirFmt
- - BIOMV210DirFmt
- - DistanceMatrixDirectoryFormat
  - AlphaDiversityDirectoryFormat
+ - DistanceMatrixDirectoryFormat
  - OrdinationDirectoryFormat
- - SeppReferenceDirFmt
  - BLAST6Format
  - RNASequencesDirectoryFormat
- - EMPPairedEndDirFmt
- - ArtificialGroupingDirectoryFormat
+ - QualityFilterStatsDirFmt
+ - FirstDifferencesFormat
+ - SingleLanePerSampleSingleEndFastqDirFmt
  - AlignedProteinFASTAFormat
  - DNASequencesDirectoryFormat
- - SingleLanePerSampleSingleEndFastqDirFmt
+ - SampleEstimatorDirFmt
+ - EMPSingleEndDirFmt
  - CasavaOneEightSingleLanePerSampleDirFmt
  - ProteinFASTAFormat
- - FirstDifferencesFormat
- - QIIME1DemuxDirFmt
+ - DADA2StatsFormat
  - Bowtie2IndexDirFmt
  - DifferentialFormat
- - TrueTargetsDirectoryFormat
- - DADA2StatsFormat
- - UchimeStatsFmt
+ - QIIME1DemuxDirFmt
+ - BIOMV210Format
+ - ArtificialGroupingFormat
+ - ProbabilitiesDirectoryFormat
 </help>
     <citations>
         <citation type="doi">10.1038/s41587-019-0209-9</citation>

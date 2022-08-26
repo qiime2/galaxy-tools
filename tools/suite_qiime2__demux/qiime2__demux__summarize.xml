@@ -23,8 +23,8 @@ for:
     <inputs>
         <param name="data" type="data" format="qza" label="data: SampleData[SequencesWithQuality | PairedEndSequencesWithQuality | JoinedSequencesWithQuality]" help="[required]  The demultiplexed sequences to be summarized.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
+                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in ['SampleData[JoinedSequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]', 'SampleData[SequencesWithQuality]']</validator>

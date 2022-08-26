@@ -23,10 +23,10 @@ for:
     <inputs>
         <param name="table" type="data" format="qza" label="table: FeatureTable[Frequency¹ | RelativeFrequency² | PresenceAbsence³ | Balance⁴ | PercentileNormalized⁵ | Design⁶]" help="[required]  Feature table containing all features that should be used for target prediction.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="FeatureTable[PercentileNormalized]"/>
+                <filter type="add_value" value="FeatureTable[Frequency]"/>
                 <filter type="add_value" value="FeatureTable[PresenceAbsence]"/>
                 <filter type="add_value" value="FeatureTable[Design]"/>
-                <filter type="add_value" value="FeatureTable[Frequency]"/>
+                <filter type="add_value" value="FeatureTable[PercentileNormalized]"/>
                 <filter type="add_value" value="FeatureTable[Balance]"/>
                 <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
             </options>

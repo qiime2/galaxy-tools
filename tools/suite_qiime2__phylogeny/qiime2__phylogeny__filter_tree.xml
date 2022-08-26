@@ -23,8 +23,8 @@ for:
     <inputs>
         <param name="tree" type="data" format="qza" label="tree: Phylogeny[Rooted¹ | Unrooted²]" help="[required]  Tree that should be filtered">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="Phylogeny[Rooted]"/>
                 <filter type="add_value" value="Phylogeny[Unrooted]"/>
+                <filter type="add_value" value="Phylogeny[Rooted]"/>
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in ['Phylogeny[Rooted]', 'Phylogeny[Unrooted]']</validator>
         </param>
@@ -32,9 +32,9 @@ for:
             <param name="table" type="data" format="qza" optional="true" label="table: FeatureTable[Frequency | RelativeFrequency | PresenceAbsence | Composition]" help="[optional]  Feature table which contains the identifier that should be retained in the tree">
                 <options options_filter_attribute="metadata.semantic_type">
                     <filter type="add_value" value="FeatureTable[PresenceAbsence]"/>
+                    <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
                     <filter type="add_value" value="FeatureTable[Composition]"/>
                     <filter type="add_value" value="FeatureTable[Frequency]"/>
-                    <filter type="add_value" value="FeatureTable[RelativeFrequency]"/>
                 </options>
                 <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in ['FeatureTable[Composition]', 'FeatureTable[Frequency]', 'FeatureTable[PresenceAbsence]', 'FeatureTable[RelativeFrequency]']</validator>
             </param>
