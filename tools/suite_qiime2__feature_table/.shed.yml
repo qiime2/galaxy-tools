@@ -7,10 +7,10 @@ categories:
   - Statistics
 auto_tool_repositories:
   name_template: '{{ tool_id }}'
-  description_template: 'Galaxy tool for QIIME 2 action: "{{tool_name}}".'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__feature_table
-  description: 'Galaxy suite for QIIME 2 plugin: "qiime2 feature-table". Plugin for
-    working with sample by feature tables.'
+  description: 'Galaxy suite for QIIME 2 plugin: ''feature-table''. Plugin for working
+    with sample by feature tables.'
   long_description: This is a QIIME 2 plugin supporting operations on sample by feature
     tables, such as filtering, merging, and transforming tables.

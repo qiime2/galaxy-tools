@@ -7,10 +7,10 @@ categories:
   - Statistics
 auto_tool_repositories:
   name_template: '{{ tool_id }}'
-  description_template: 'Galaxy tool for QIIME 2 action: "{{tool_name}}".'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__quality_control
-  description: 'Galaxy suite for QIIME 2 plugin: "qiime2 quality-control". Plugin
-    for quality control of feature and sequence data.'
+  description: 'Galaxy suite for QIIME 2 plugin: ''quality-control''. Plugin for quality
+    control of feature and sequence data.'
   long_description: This QIIME 2 plugin supports methods for assessing and controlling
     the quality of feature and sequence data.

@@ -23,8 +23,8 @@ for:
     <inputs>
         <param name="demux" type="data" format="qza" label="demux: SampleData[SequencesWithQuality¹ | PairedEndSequencesWithQuality² | JoinedSequencesWithQuality³]" help="[required]  The demultiplexed data from which samples should be filtered.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
+                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in ['SampleData[JoinedSequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]', 'SampleData[SequencesWithQuality]']</validator>

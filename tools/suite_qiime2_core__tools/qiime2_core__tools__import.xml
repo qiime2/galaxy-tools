@@ -1514,21 +1514,6 @@ Formats:
 --------
 These formats have documentation available.
 
-TSVTaxonomyFormat
-*****************
-Format for a 2+ column TSV file with an expected minimal header.
-
-The only header recognized by this format is:
-
-    Feature ID&lt;tab&gt;Taxon
-
-Optionally followed by other arbitrary columns.
-
-This format supports blank lines. The expected header must be the first
-non-blank line. In addition to the header, there must be at least one line
-of data.
-
-
 QIIME1DemuxFormat
 *****************
 QIIME 1 demultiplexed FASTA format.
@@ -1576,58 +1561,73 @@ Format for a 2+ column TSV file without a header.
 This format supports comment lines starting with #, and blank lines.
 
 
+TSVTaxonomyFormat
+*****************
+Format for a 2+ column TSV file with an expected minimal header.
+
+The only header recognized by this format is:
+
+    Feature ID&lt;tab&gt;Taxon
+
+Optionally followed by other arbitrary columns.
+
+This format supports blank lines. The expected header must be the first
+non-blank line. In addition to the header, there must be at least one line
+of data.
+
+
 Additional formats without documentation:
 *****************************************
+ - SingleEndFastqManifestPhred33
+ - AlignedDNAFASTAFormat
+ - DeblurStatsFmt
+ - ProcrustesStatisticsFmt
+ - BIOMV100Format
+ - AlphaDiversityFormat
+ - LSMatFormat
+ - PairedDNASequencesDirectoryFormat
+ - MultiplexedPairedEndBarcodeInSequenceDirFmt
+ - OrdinationFormat
+ - SampleEstimatorDirFmt
+ - SingleLanePerSamplePairedEndFastqDirFmt
+ - PairedEndFastqManifestPhred64V2
+ - RNAFASTAFormat
+ - TaxonomicClassiferTemporaryPickleDirFmt
+ - PredictionsFormat
+ - EMPPairedEndCasavaDirFmt
+ - ArtificialGroupingFormat
+ - DNAFASTAFormat
+ - SeppReferenceDirFmt
+ - BIOMV210Format
+ - SingleEndFastqManifestPhred33V2
+ - BooleanSeriesFormat
+ - PairedEndFastqManifestPhred64
+ - EMPPairedEndDirFmt
+ - NewickFormat
+ - SingleEndFastqManifestPhred64
+ - UchimeStatsFmt
+ - PairedRNASequencesDirectoryFormat
+ - ErrorCorrectionDetailsFmt
+ - FirstDifferencesFormat
+ - EMPSingleEndDirFmt
+ - CasavaOneEightLanelessPerSampleDirFmt
+ - BLAST6Format
  - SingleLanePerSampleSingleEndFastqDirFmt
  - AlignedProteinFASTAFormat
  - QualityFilterStatsFmt
  - PairedEndFastqManifestPhred33V2
- - DeblurStatsFmt
- - ProteinFASTAFormat
- - PredictionsFormat
+ - DADA2StatsFormat
+ - PlacementsFormat
+ - EMPSingleEndCasavaDirFmt
  - CasavaOneEightSingleLanePerSampleDirFmt
+ - ProteinFASTAFormat
  - SingleEndFastqManifestPhred64V2
  - Bowtie2IndexDirFmt
  - DifferentialFormat
- - BIOMV210Format
- - SeppReferenceDirFmt
- - UchimeStatsFmt
+ - ProbabilitiesFormat
  - PairedEndFastqManifestPhred33
  - AlignedRNAFASTAFormat
- - ProcrustesStatisticsFmt
- - ErrorCorrectionDetailsFmt
- - TaxonomicClassiferTemporaryPickleDirFmt
- - SingleEndFastqManifestPhred33
- - AlignedDNAFASTAFormat
- - OrdinationFormat
- - EMPPairedEndDirFmt
- - ProbabilitiesFormat
- - BIOMV100Format
- - PairedDNASequencesDirectoryFormat
- - MultiplexedPairedEndBarcodeInSequenceDirFmt
- - DADA2StatsFormat
- - AlphaDiversityFormat
  - ImportanceFormat
- - SingleLanePerSamplePairedEndFastqDirFmt
- - RNAFASTAFormat
- - PairedEndFastqManifestPhred64V2
- - DNAFASTAFormat
- - PlacementsFormat
- - SingleEndFastqManifestPhred33V2
- - SampleEstimatorDirFmt
- - FirstDifferencesFormat
- - EMPSingleEndDirFmt
- - NewickFormat
- - PairedEndFastqManifestPhred64
- - ArtificialGroupingFormat
- - SingleEndFastqManifestPhred64
- - EMPPairedEndCasavaDirFmt
- - EMPSingleEndCasavaDirFmt
- - BooleanSeriesFormat
- - PairedRNASequencesDirectoryFormat
- - LSMatFormat
- - CasavaOneEightLanelessPerSampleDirFmt
- - BLAST6Format
 </help>
     <citations>
         <citation type="doi">10.1038/s41587-019-0209-9</citation>
