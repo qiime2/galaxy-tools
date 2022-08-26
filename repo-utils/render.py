@@ -100,7 +100,7 @@ def render_distro(distro_definition, depends, collections_dir):
         'categories': list(categories),
         'suite': {
             'name': name,
-            'description': quoteattr(distro_definition['description']),
+            'description': quoteattr(distro_definition['description'])[1:-1],
             'include_repositories': [
                 dict(name=s['suite']['name'], owner=s['owner'])
                 for s in depends]
@@ -132,7 +132,6 @@ def render_plugin(plugin, distro_definition, cached_plugins, tools_dir):
         docker_image = docker_image + ':' + version
         env_run = setup_docker(docker_image, tools_dir)
 
-
     print(f"PLUGIN RENDER: {id_}", flush=True)
     stdout, _ = env_run(['q2galaxy', 'template', 'plugin', id_, tools_dir])
 
@@ -149,7 +148,6 @@ def render_plugin(plugin, distro_definition, cached_plugins, tools_dir):
                 continue
 
             env_run(['repo-utils/swap-in-docker.py', path, docker_image])
-
 
     categories = ','.join(
         plugin.get('categories', distro_definition['default_categories']))
@@ -193,7 +191,6 @@ def render_tools(distro_definition, tools_dir):
                 continue
 
             env_run(['repo-utils/swap-in-docker.py', path, docker_image])
-
 
     stdout, _ = env_run(["repo-utils/create-builtin-suite-yaml.py",
                          distro_definition['name'], categories, out_dir])

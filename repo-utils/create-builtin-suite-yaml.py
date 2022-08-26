@@ -5,7 +5,6 @@ import sys
 import json
 
 import yaml
-import qiime2.sdk
 
 
 # SO: https://stackoverflow.com/a/39681672

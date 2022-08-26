@@ -41,7 +41,8 @@ def main(plugin_id, categories, destination):
     }
     # Fix quoting for XML as these are converted blindly on the toolshed
     # causing inconsistent states:
-    shed['suite']['description'] = quoteattr(shed['suite']['description'])
+    shed['suite']['description'] = \
+        quoteattr(shed['suite']['description'])[1:-1]  # strip double quotes
     # long_description doesn't appear to be written into the
     # tool_dependencies.xml, so it is probably fine.
 
