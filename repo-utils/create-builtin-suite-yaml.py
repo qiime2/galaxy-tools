@@ -18,6 +18,7 @@ def main(distro, categories, destination):
 
     shed = {
         'owner': 'q2d2',
+        'type': 'unrestricted',
         'homepage_url': 'https://qiime2.org',
         'remote_repository_url': (f'https://github.com/qiime2/galaxy-tools'
                                   f'/tree/main/tools/{suite_name}'),

@@ -22,6 +22,7 @@ def main(plugin_id, categories, destination):
 
     shed = {
         'owner': 'q2d2',
+        'type': 'unrestricted',
         'homepage_url': plugin.website,
         'remote_repository_url': (f'https://github.com/qiime2/galaxy-tools'
                                   f'/tree/main/tools/{suite_name}'),
