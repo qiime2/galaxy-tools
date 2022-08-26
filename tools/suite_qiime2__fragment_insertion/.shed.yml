@@ -7,9 +7,9 @@ categories:
   - Statistics
 auto_tool_repositories:
   name_template: '{{ tool_id }}'
-  description_template: 'Galaxy tool for QIIME 2 action: "{{tool_name}}".'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__fragment_insertion
-  description: 'Galaxy suite for QIIME 2 plugin: "qiime2 fragment-insertion". Plugin
-    for extending phylogenies.'
+  description: 'Galaxy suite for QIIME 2 plugin: ''fragment-insertion''. Plugin for
+    extending phylogenies.'
   long_description: 'No description available. See plugin website: https://github.com/qiime2/q2-fragment-insertion'

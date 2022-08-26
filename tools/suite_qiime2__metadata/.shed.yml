@@ -7,10 +7,10 @@ categories:
   - Statistics
 auto_tool_repositories:
   name_template: '{{ tool_id }}'
-  description_template: 'Galaxy tool for QIIME 2 action: "{{tool_name}}".'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
 suite:
   name: suite_qiime2__metadata
-  description: 'Galaxy suite for QIIME 2 plugin: "qiime2 metadata". Plugin for working
+  description: 'Galaxy suite for QIIME 2 plugin: ''metadata''. Plugin for working
     with Metadata.'
   long_description: This QIIME 2 plugin provides functionality for working with and
     visualizing Metadata.
