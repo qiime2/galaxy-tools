@@ -33,7 +33,7 @@ def main(plugin_id, categories, destination):
         'suite': {
             'name': suite_name,
             'description': f'Galaxy suite for QIIME 2 plugin: '
-                           f'\'qiime2 {plugin.name}\'.'
+                           f'\'{plugin.name}\'.'
                            f' {plugin.short_description}',
             'long_description': plugin.description
         }
