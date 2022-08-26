@@ -3,6 +3,7 @@
 import os
 import sys
 import json
+from xml.sax.saxutils import quoteattr
 
 import yaml
 import qiime2.sdk
@@ -38,6 +39,12 @@ def main(plugin_id, categories, destination):
             'long_description': plugin.description
         }
     }
+    # Fix quoting for XML as these are converted blindly on the toolshed
+    # causing inconsistent states:
+    shed['suite']['description'] = quoteattr(shed['suite']['description'])
+    # long_description doesn't appear to be written into the
+    # tool_dependencies.xml, so it is probably fine.
+
     with open(os.path.join(destination, '.shed.yml'), 'w') as fh:
         fh.write(yaml.dump(shed, default_flow_style=False, sort_keys=False,
                  Dumper=Dumper))

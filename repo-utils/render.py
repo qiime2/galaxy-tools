@@ -5,6 +5,7 @@ import sys
 import json
 import shlex
 import subprocess
+from xml.sax.saxutils import quoteattr
 
 import yaml
 import conda.cli.python_api as conda_api
@@ -87,7 +88,6 @@ def setup_docker(image, tools_dir):
 
 
 def render_distro(distro_definition, depends, collections_dir):
-    return
     print(f"DISTRO RENDER: {distro_definition['name']}", flush=True)
 
     categories = set()
@@ -100,7 +100,7 @@ def render_distro(distro_definition, depends, collections_dir):
         'categories': list(categories),
         'suite': {
             'name': name,
-            'description': distro_definition['description'],
+            'description': quoteattr(distro_definition['description']),
             'include_repositories': [
                 dict(name=s['suite']['name'], owner=s['owner'])
                 for s in depends]
