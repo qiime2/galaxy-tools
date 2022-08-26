@@ -26,14 +26,14 @@ def main(distro, categories, destination):
         'auto_tool_repositories': {
             'name_template': '{{ tool_id }}',
             'description_template': 'Galaxy tool for QIIME 2 builtin:'
-                                    ' "{{ tool_name }}".'
+                                    ' \'{{ tool_name }}\'.'
         },
         'suite': {
             'name': suite_name,
             'description': f'Galaxy suite for QIIME 2 builtins for the'
-                           f' "{distro}" distribution.',
+                           f' \'{distro}\' distribution.',
             'long_description': f'Galaxy suite for QIIME 2 builtins for the'
-                                f' "{distro}" distribution.'
+                                f' \'{distro}\' distribution.'
         }
     }
     with open(os.path.join(destination, '.shed.yml'), 'w') as fh:

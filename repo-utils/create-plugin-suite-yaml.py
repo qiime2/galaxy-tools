@@ -28,12 +28,12 @@ def main(plugin_id, categories, destination):
         'auto_tool_repositories': {
             'name_template': '{{ tool_id }}',
             'description_template': 'Galaxy tool for QIIME 2 action:'
-                                    ' "{{tool_name}}".'
+                                    ' \'{{tool_name}}\'.'
         },
         'suite': {
             'name': suite_name,
             'description': f'Galaxy suite for QIIME 2 plugin: '
-                           f'"qiime2 {plugin.name}".'
+                           f'\'qiime2 {plugin.name}\'.'
                            f' {plugin.short_description}',
             'long_description': plugin.description
         }
