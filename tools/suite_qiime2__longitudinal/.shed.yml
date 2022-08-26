@@ -1,0 +1,16 @@
+owner: q2d2
+homepage_url: https://github.com/qiime2/q2-longitudinal
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2__longitudinal
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
+suite:
+  name: suite_qiime2__longitudinal
+  description: 'Galaxy suite for QIIME 2 plugin: ''longitudinal''. Plugin for paired
+    sample and time series analyses.'
+  long_description: This QIIME 2 plugin supports methods for analysis of time series
+    data, involving either paired sample comparisons or longitudinal study designs.
