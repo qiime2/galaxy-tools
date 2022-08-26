@@ -1,0 +1,16 @@
+owner: q2d2
+homepage_url: http://benjjneb.github.io/dada2/
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2__dada2
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: "{{tool_name}}".'
+suite:
+  name: suite_qiime2__dada2
+  description: 'Galaxy suite for QIIME 2 plugin: "qiime2 dada2". Plugin for sequence
+    quality control with DADA2.'
+  long_description: This QIIME 2 plugin wraps DADA2 and supports sequence quality
+    control for single-end and paired-end reads using the DADA2 R library.
