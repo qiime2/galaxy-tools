@@ -23,8 +23,8 @@ for:
     <inputs>
         <param name="trees" type="data" format="qza" label="trees: List[Phylogeny[Rooted | Unrooted]]" help="[required]  Phylogenetic trees to compare with Robinson-Foulds. Rooting information and branch lengths are ignored by this metric." multiple="true">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="Phylogeny[Unrooted]"/>
                 <filter type="add_value" value="Phylogeny[Rooted]"/>
+                <filter type="add_value" value="Phylogeny[Unrooted]"/>
             </options>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">
