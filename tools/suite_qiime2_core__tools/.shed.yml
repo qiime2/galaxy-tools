@@ -1,4 +1,5 @@
 owner: q2d2
+type: unrestricted
 homepage_url: https://qiime2.org
 remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2_core__tools
 categories:
