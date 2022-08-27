@@ -88,14 +88,13 @@ def setup_docker(image, tools_dir):
 
 
 def render_distro(distro_definition, depends, collections_dir):
-    return  # someday this will work.
     print(f"DISTRO RENDER: {distro_definition['name']}", flush=True)
 
     categories = set()
     for s in depends:
         categories.update(s['categories'])
 
-    name = f"suite_qiime2dist_{distro_definition['name']}"
+    name = f"suite_qiime2_{distro_definition['name']}"
     shed = {
         'owner': 'q2d2',
         'categories': list(categories),
@@ -142,6 +141,12 @@ def render_plugin(plugin, distro_definition, cached_plugins, tools_dir):
     else:
         suite_dir = os.path.relpath(paths[0], tools_dir).split(os.path.sep)[0]
         out_dir = os.path.join(tools_dir, suite_dir)
+
+    # Fix crazy output names when installed on toolshed
+    # TODO: fix in q2galaxy
+    subprocess.run(
+        "sed -i 's/${tool.id}/${tool.name}/g' " + out_dir + '/*.xml',
+        check=True, shell=True)
 
     if docker_image is not None:
         for path in paths:

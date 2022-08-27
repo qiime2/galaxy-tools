@@ -7,11 +7,13 @@ on:
     paths-ignore:
       - 'tool_collections/**'
       - 'tools/**'
+      - 'README.md'
   pull_request:
     branches: [main]
     paths-ignore:
       - 'tool_collections/**'
       - 'tools/**'
+      - 'README.md'
 
 jobs:
   render:
@@ -31,13 +33,28 @@ jobs:
           conda install pyyaml
           make render
 
-      - name: create PR
+      - name: create tools PR
         uses: peter-evans/create-pull-request@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
+          add-paths: tools
           token: ${{ secrets.Q2D2_TOKEN }}
-          commit-message: Updated tools
+          commit-message: Update Galaxy Tools
           committer: q2d2 <q2d2.noreply@gmail.com>
           author: q2d2 <q2d2.noreply@gmail.com>
           title: Automated re-render of Galaxy Tools
           body: Results of `make render` on `main`
+
+      - name: create collections PR
+        uses: peter-evans/create-pull-request@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          add-paths: tool_collections
+          token: ${{ secrets.Q2D2_TOKEN }}
+          commit-message: Update Galaxy Tool Collections
+          committer: q2d2 <q2d2.noreply@gmail.com>
+          author: q2d2 <q2d2.noreply@gmail.com>
+          title: Automated re-render of Galaxy Tool Collections (wait to merge)
+          body: |
+            Results of `make render` on `main`.
+            DO NOT MERGE until all tools in the sibling PR have successfully deployed.

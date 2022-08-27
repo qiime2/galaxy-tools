@@ -12,10 +12,14 @@ on:
       # The rendering has 2 phases: 1st is updating distros which issues a PR,
       # that PR has the changes which are then tested by this action.
       - 'distros.yaml'
+      - 'repo-utils/**'
+      - 'README.md'
   pull_request:
     branches: [main]
     paths-ignore:
       - 'distros.yaml'
+      - 'repo-utils/**'
+      - 'README.md'
 # MODIFIED END
 env:
   GALAXY_FORK: galaxyproject
@@ -355,13 +359,13 @@ jobs:
         repository-list: ${{ needs.setup.outputs.repository-list }}
         shed-target: testtoolshed
         shed-key: ${{ secrets.TTS_API_KEY }}
-#    - name: Deploy on toolshed
-#      uses: galaxyproject/planemo-ci-action@v1
-#      with:
-#        mode: deploy
-#        repository-list: ${{ needs.setup.outputs.repository-list }}
-#        shed-target: toolshed
-#        shed-key: ${{ secrets.TS_API_KEY }}
+    - name: Deploy on toolshed
+      uses: galaxyproject/planemo-ci-action@v1
+      with:
+        mode: deploy
+        repository-list: ${{ needs.setup.outputs.repository-list }}
+        shed-target: toolshed
+        shed-key: ${{ secrets.TS_API_KEY }}
 
   determine-success:
     name: Check workflow success
