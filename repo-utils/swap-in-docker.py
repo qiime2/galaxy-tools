@@ -16,7 +16,7 @@ def main(tool_fp, docker_image):
 
     root.replace(root.find('requirements'), new_reqs)
     # HACK: set correct profile and hack version
-    root.set('version', root.get('version') + '.1')
+    root.set('version', root.get('version') + '.2')
     root.set('profile', '22.05')
 
     xml.indent(tool, ' ' * 4)
