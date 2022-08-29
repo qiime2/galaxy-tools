@@ -38,6 +38,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           add-paths: tools
+          branch: create-pull-request/patch-tools
           token: ${{ secrets.Q2D2_TOKEN }}
           commit-message: Update Galaxy Tools
           committer: q2d2 <q2d2.noreply@gmail.com>
@@ -50,6 +51,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           add-paths: tool_collections
+          branch: create-pull-request/patch-collections
           token: ${{ secrets.Q2D2_TOKEN }}
           commit-message: Update Galaxy Tool Collections
           committer: q2d2 <q2d2.noreply@gmail.com>
