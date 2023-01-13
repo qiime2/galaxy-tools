@@ -22,7 +22,7 @@ def main(tool_fp, docker_image):
     root.set('profile', '22.05')
 
     # HACK: fix visualizer output ftype
-    for output in root.iterfind('output'):
+    for output in root.iterfind('.//output'):
         if output.get('name') == 'visualization':
             output.set('ftype', 'qzv')
 
