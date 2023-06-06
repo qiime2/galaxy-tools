@@ -23,10 +23,11 @@ for:
     <inputs>
         <param name="demux" type="data" format="qza" label="demux: SampleData[SequencesWithQuality | PairedEndSequencesWithQuality]¹ | SampleData[JoinedSequencesWithQuality]²" help="[required]  The demultiplexed sequence data to be quality filtered.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="SampleData[SequencesWithQuality | PairedEndSequencesWithQuality]"/>
+                <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
+                <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
             </options>
-            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in ['SampleData[JoinedSequencesWithQuality]', 'SampleData[SequencesWithQuality | PairedEndSequencesWithQuality]']</validator>
+            <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in ['SampleData[JoinedSequencesWithQuality]', 'SampleData[SequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]']</validator>
         </param>
         <section name="__q2galaxy__GUI__section__extra_opts__" title="Click here for additional options">
             <param name="min_quality" type="integer" value="4" label="min_quality: Int" help="[default: 4]  The minimum acceptable PHRED score. All PHRED scores less that this value are considered to be low PHRED scores."/>
