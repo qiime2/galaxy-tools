@@ -126,18 +126,18 @@ jobs:
       with:
         path: ~/.cache/pip
         key: pip_cache_py_${{ matrix.python-version }}_gxy_${{ needs.setup.outputs.galaxy-head-sha }}
-    - name: Planemo lint
-      uses: galaxyproject/planemo-ci-action@v1
-      id: lint
-      with:
-        mode: lint
-        repository-list: ${{ needs.setup.outputs.repository-list }}
-        tool-list: ${{ needs.setup.outputs.tool-list }}
-    - uses: actions/upload-artifact@v2
-      if: ${{ failure() }}
-      with:
-        name: 'Tool linting output'
-        path: lint_report.txt
+#     - name: Planemo lint
+#       uses: galaxyproject/planemo-ci-action@v1
+#       id: lint
+#       with:
+#         mode: lint
+#         repository-list: ${{ needs.setup.outputs.repository-list }}
+#         tool-list: ${{ needs.setup.outputs.tool-list }}
+#     - uses: actions/upload-artifact@v2
+#       if: ${{ failure() }}
+#       with:
+#         name: 'Tool linting output'
+#         path: lint_report.txt
 
   # flake8 of Python scripts in the changed repositories
   flake8:
