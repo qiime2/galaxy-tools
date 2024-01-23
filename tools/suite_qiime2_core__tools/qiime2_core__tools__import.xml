@@ -1668,8 +1668,8 @@ write(json.dumps(inputs))
                         <param name="__q2galaxy__GUI__select__picker__" value="collection"/>
                         <param name="elements">
                             <collection type="list">
-                                <element name="YY_S49_R1_001.fastq,gz" ftype="tabular" value="YY/YY_S49_R1_001.fastq.gz" />
-                                <element name="YY_S49_R2_001.fastq.gz" ftype="tabular" value="YY/YY_S49_R2_001.fastq.gz" />
+                                <element name="YY_S49_L001_R1_001.fastq.gz" ftype="fastqsanger.gz" value="YY/YY_S49_R1_001.fastq.gz" />
+                                <element name="YY_S49_L001_R2_001.fastq.gz" ftype="fastqsanger.gz" value="YY/YY_S49_R2_001.fastq.gz" />
                             </collection>
                         </param>
                         <conditional name="__q2galaxy__GUI__cond__add_ext__">
