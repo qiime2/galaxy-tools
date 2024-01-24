@@ -1629,6 +1629,34 @@ for:
             <conditional name="import_root">
                 <param name="type" value="SampleData__ob__PairedEndSequencesWithQuality__cb__"/>
                 <conditional name="__q2galaxy__GUI__cond__format__">
+                    <param name="format" value="CasavaOneEightLanelessPerSampleDirFmt"/>
+                    <section name="import_sequences">
+                    <conditional name="__q2galaxy__GUI__cond__sequences__">
+                        <param name="__q2galaxy__GUI__select__picker__" value="collection"/>
+                        <param name="elements">
+                            <collection type="list">
+                                <element name="YY_S49_R1_001.fastq.gz" ftype="fastqsanger.gz" value="YY/YY_S49_R1_001.fastq.gz" />
+                                <element name="YY_S49_R2_001.fastq.gz" ftype="fastqsanger.gz" value="YY/YY_S49_R2_001.fastq.gz" />
+                            </collection>
+                        </param>
+                        <conditional name="__q2galaxy__GUI__cond__add_ext__">
+                            <param name="__q2galaxy__GUI__select__ext_pick__" value="yes"/>
+                            <param name="ext" label="fastq.gz"/>
+                        </conditional>
+                    </conditional>
+                </section>
+                </conditional>
+            </conditional>
+            <output name="imported_data">
+                <assert_contents>
+                    <has_size min="1"/>
+                </assert_contents>
+            </output>
+        </test>
+        <test>
+            <conditional name="import_root">
+                <param name="type" value="SampleData__ob__PairedEndSequencesWithQuality__cb__"/>
+                <conditional name="__q2galaxy__GUI__cond__format__">
                     <param name="format" value="CasavaOneEightSingleLanePerSampleDirFmt"/>
                     <section name="import_sequences">
                     <conditional name="__q2galaxy__GUI__cond__sequences__">
