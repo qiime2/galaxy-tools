@@ -15,12 +15,45 @@ for:
     <requirements>
         <container type="docker">quay.io/qiime2/core:2023.5</container>
     </requirements>
-    <command detect_errors="exit_code"><![CDATA[
-        sed -e 's/^{"import_root": //; s/}$//; s/"staging_path"/"name"/g; s/"source_path"/"data"/g; s/fastq.gz.fastqsanger.gz/fastq.gz/g' '$inputs' > inputs.json &&
-        q2galaxy run tools import 'inputs.json'
-    ]]></command>
+    <command detect_errors="exit_code">q2galaxy run tools import '$inputs'</command>
     <configfiles>
-        <inputs name="inputs" data_style="staging_path_and_source_path"/>
+        <configfile name="inputs">&lt;%
+# This is an exercise in cheating the Cheetah
+import json
+
+def expand_collection(collection):
+    # All of this work is just to extract the
+    # element identifier AND the path
+    return [dict(name=d.element_identifier, data=stringify(d))
+            for d in collection]
+
+def stringify(obj):
+    if type(obj) is dict:
+        new = {}
+        for key, value in obj.items():
+            if (key.startswith('__') and key.endswith('__')
+                    and not key.startswith('__q2galaxy__')):
+                continue
+            new[str(key)] = stringify(value)
+
+        return new
+    elif type(obj) is list:
+        return [stringify(x) for x in obj]
+    elif type(obj.__str__) is not type(object().__str__):  # noqa
+        # There is an associated __str__ which will be used for
+        # "normal" templating, it looks like a strange check because
+        # it really is, we're testing for method-wrapper as a sign
+        # of non-implementation
+        return str(obj)
+    elif obj.is_collection:
+        return expand_collection(obj)
+    else:
+        raise NotImplementedError("Unrecognized situation in q2galaxy")
+
+dataset = self.getVar('import_root')
+inputs = stringify(dataset)
+write(json.dumps(inputs))
+    %&gt;</configfile>
     </configfiles>
     <inputs>
         <conditional name="import_root">
