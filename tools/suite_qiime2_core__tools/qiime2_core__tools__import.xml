@@ -20,6 +20,7 @@ for:
         <configfile name="inputs">&lt;%
 # This is an exercise in cheating the Cheetah
 import json
+from collections.abc import MutableMapping
 
 def expand_collection(collection):
     # All of this work is just to extract the
@@ -28,7 +29,7 @@ def expand_collection(collection):
             for d in collection]
 
 def stringify(obj):
-    if type(obj) is dict:
+    if isinstance(obj, MutableMapping):
         new = {}
         for key, value in obj.items():
             if (key.startswith('__') and key.endswith('__')
