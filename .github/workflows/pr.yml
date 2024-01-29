@@ -23,7 +23,7 @@ on:
 # MODIFIED END
 env:
   GALAXY_FORK: galaxyproject
-  GALAXY_BRANCH: release_22.05  # MODIFIED
+  GALAXY_BRANCH: release_23.1  # MODIFIED
   MAX_CHUNKS: 10  # MODIFIED
 jobs:
   # the setup job does two things:
