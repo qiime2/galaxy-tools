@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!--
-Copyright (c) 2023, QIIME 2 development team.
+Copyright (c) 2024, QIIME 2 development team.
 
 Distributed under the terms of the Modified BSD License. (SPDX: BSD-3-Clause)
 -->
@@ -448,7 +448,7 @@ for:
     </inputs>
     <outputs>
         <collection name="exported" type="list" label="${tool.name} on ${on_string} as ${fmt_peek}">
-            <filter>fmt_finder['output_format'] == 'None' and fmt_peek not in {'QIIME1DemuxFormat', 'DNAFASTAFormat', 'PlacementsDirFmt', 'ImmutableMetadataFormat', 'Bowtie2IndexDirFmt', 'QIIME1DemuxDirFmt', 'AlignedDNASequencesDirectoryFormat', 'DADA2StatsDirFmt', 'AlignedRNASequencesDirectoryFormat', 'OrdinationFormat', 'ProteinFASTAFormat', 'LSMatFormat', 'PairedRNASequencesDirectoryFormat', 'DifferentialFormat', 'MultiplexedPairedEndBarcodeInSequenceDirFmt', 'AlignedProteinFASTAFormat', 'ArtificialGroupingDirectoryFormat', 'RNAFASTAFormat', 'SeppReferenceDirFmt', 'FastqGzFormat', 'ProcrustesStatisticsDirFmt', 'SingleLanePerSampleSingleEndFastqDirFmt', 'QualityFilterStatsFmt', 'PlacementsFormat', 'ProbabilitiesDirectoryFormat', 'ImportanceDirectoryFormat', 'FirstDifferencesFormat', 'TrueTargetsDirectoryFormat', 'ImmutableMetadataDirectoryFormat', 'UchimeStatsDirFmt', 'NewickDirectoryFormat', 'DADA2StatsFormat', 'AlignedDNAFASTAFormat', 'PredictionsDirectoryFormat', 'AlphaDiversityDirectoryFormat', 'MultiplexedSingleEndBarcodeInSequenceDirFmt', 'DeblurStatsDirFmt', 'DNASequencesDirectoryFormat', 'SingleLanePerSamplePairedEndFastqDirFmt', 'UchimeStatsFmt', 'CasavaOneEightSingleLanePerSampleDirFmt', 'ErrorCorrectionDetailsDirFmt', 'BLAST6DirectoryFormat', 'DecontamScoreDirFmt', 'SampleEstimatorDirFmt', 'FirstDifferencesDirectoryFormat', 'QualityFilterStatsDirFmt', 'DistanceMatrixDirectoryFormat', 'DecontamScoreFormat', 'EMPSingleEndDirFmt', 'EMPPairedEndDirFmt', 'DataLoafPackageDirFmt', 'PairedDNASequencesDirectoryFormat', 'BIOMV210DirFmt', 'AlignedRNAFASTAFormat', 'OrdinationDirectoryFormat', 'BIOMV210Format', 'AlphaDiversityFormat', 'ArtificialGroupingFormat', 'DeblurStatsFmt', 'TSVTaxonomyDirectoryFormat', 'PredictionsFormat', 'BooleanSeriesFormat', 'DifferentialDirectoryFormat', 'ProcrustesStatisticsFmt', 'BooleanSeriesDirectoryFormat', 'AlignedProteinSequencesDirectoryFormat', 'TSVTaxonomyFormat', 'NewickFormat', 'ProteinSequencesDirectoryFormat', 'BLAST6Format', 'ImportanceFormat', 'RNASequencesDirectoryFormat', 'TaxonomicClassiferTemporaryPickleDirFmt', 'ProbabilitiesFormat'}</filter>
+            <filter>fmt_finder['output_format'] == 'None' and fmt_peek not in {'NewickDirectoryFormat', 'TrueTargetsDirectoryFormat', 'QIIME1DemuxDirFmt', 'QualityFilterStatsFmt', 'ArtificialGroupingFormat', 'DeblurStatsFmt', 'PlacementsDirFmt', 'DeblurStatsDirFmt', 'DADA2StatsDirFmt', 'AlignedRNAFASTAFormat', 'RNAFASTAFormat', 'ErrorCorrectionDetailsDirFmt', 'DistanceMatrixDirectoryFormat', 'AlignedProteinSequencesDirectoryFormat', 'AlignedProteinFASTAFormat', 'ProteinSequencesDirectoryFormat', 'FirstDifferencesFormat', 'ImportanceDirectoryFormat', 'PairedRNASequencesDirectoryFormat', 'ProbabilitiesFormat', 'ArtificialGroupingDirectoryFormat', 'MultiplexedSingleEndBarcodeInSequenceDirFmt', 'DecontamScoreDirFmt', 'UchimeStatsFmt', 'OrdinationFormat', 'SingleLanePerSampleSingleEndFastqDirFmt', 'AlignedRNASequencesDirectoryFormat', 'PlacementsFormat', 'ProcrustesStatisticsFmt', 'OrdinationDirectoryFormat', 'BLAST6Format', 'DecontamScoreFormat', 'BIOMV210DirFmt', 'PredictionsFormat', 'SampleEstimatorDirFmt', 'DifferentialDirectoryFormat', 'BIOMV210Format', 'Bowtie2IndexDirFmt', 'ImmutableMetadataFormat', 'QIIME1DemuxFormat', 'SingleLanePerSamplePairedEndFastqDirFmt', 'TSVTaxonomyFormat', 'PredictionsDirectoryFormat', 'NewickFormat', 'ProteinFASTAFormat', 'DNAFASTAFormat', 'AlignedDNASequencesDirectoryFormat', 'MultiplexedPairedEndBarcodeInSequenceDirFmt', 'AlphaDiversityFormat', 'TSVTaxonomyDirectoryFormat', 'QualityFilterStatsDirFmt', 'LSMatFormat', 'ProbabilitiesDirectoryFormat', 'AlphaDiversityDirectoryFormat', 'DADA2StatsFormat', 'DNASequencesDirectoryFormat', 'PairedDNASequencesDirectoryFormat', 'DifferentialFormat', 'FirstDifferencesDirectoryFormat', 'ImportanceFormat', 'SeppReferenceDirFmt', 'EMPSingleEndDirFmt', 'TaxonomicClassiferTemporaryPickleDirFmt', 'EMPPairedEndDirFmt', 'CasavaOneEightSingleLanePerSampleDirFmt', 'BooleanSeriesDirectoryFormat', 'AlignedDNAFASTAFormat', 'BooleanSeriesFormat', 'FastqGzFormat', 'DataLoafPackageDirFmt', 'BLAST6DirectoryFormat', 'UchimeStatsDirFmt', 'ProcrustesStatisticsDirFmt', 'RNASequencesDirectoryFormat', 'ImmutableMetadataDirectoryFormat'}</filter>
             <discover_datasets pattern="__designation_and_ext__" visible="false"/>
         </collection>
         <data name="AlignedDNAFASTAFormat" label="${tool.name} on ${on_string} as AlignedDNAFASTAFormat">
@@ -862,78 +862,78 @@ A gzipped fastq file.
 
 Additional formats without documentation:
 *****************************************
- - FirstDifferencesFormat
- - DecontamScoreDirFmt
- - OrdinationDirectoryFormat
- - EMPPairedEndDirFmt
- - ImmutableMetadataFormat
- - PredictionsDirectoryFormat
- - AlphaDiversityDirectoryFormat
- - DataLoafPackageDirFmt
- - AlignedDNAFASTAFormat
- - DADA2StatsDirFmt
- - TrueTargetsDirectoryFormat
- - UchimeStatsFmt
- - BLAST6Format
- - PairedDNASequencesDirectoryFormat
- - QIIME1DemuxDirFmt
- - QualityFilterStatsFmt
- - DADA2StatsFormat
- - AlignedProteinFASTAFormat
- - PlacementsFormat
- - NewickFormat
- - ProbabilitiesDirectoryFormat
- - ErrorCorrectionDetailsDirFmt
- - ProteinFASTAFormat
- - RNAFASTAFormat
- - MultiplexedSingleEndBarcodeInSequenceDirFmt
- - BooleanSeriesFormat
- - LSMatFormat
- - ImportanceDirectoryFormat
- - DeblurStatsFmt
- - AlignedRNASequencesDirectoryFormat
- - QualityFilterStatsDirFmt
- - TaxonomicClassiferTemporaryPickleDirFmt
- - BooleanSeriesDirectoryFormat
- - DifferentialDirectoryFormat
- - DNAFASTAFormat
- - ProcrustesStatisticsFmt
- - PlacementsDirFmt
- - EMPSingleEndDirFmt
- - DecontamScoreFormat
- - BIOMV210DirFmt
- - ImmutableMetadataDirectoryFormat
- - AlignedDNASequencesDirectoryFormat
- - TSVTaxonomyDirectoryFormat
- - OrdinationFormat
- - FirstDifferencesDirectoryFormat
- - Bowtie2IndexDirFmt
- - BIOMV210Format
- - SingleLanePerSampleSingleEndFastqDirFmt
- - SampleEstimatorDirFmt
  - PairedRNASequencesDirectoryFormat
+ - BooleanSeriesDirectoryFormat
+ - NewickDirectoryFormat
+ - PredictionsFormat
  - CasavaOneEightSingleLanePerSampleDirFmt
  - AlignedProteinSequencesDirectoryFormat
- - UchimeStatsDirFmt
- - NewickDirectoryFormat
- - SingleLanePerSamplePairedEndFastqDirFmt
+ - DistanceMatrixDirectoryFormat
+ - DeblurStatsDirFmt
  - DifferentialFormat
  - ProteinSequencesDirectoryFormat
  - RNASequencesDirectoryFormat
+ - DecontamScoreDirFmt
  - MultiplexedPairedEndBarcodeInSequenceDirFmt
  - AlphaDiversityFormat
- - DistanceMatrixDirectoryFormat
- - ArtificialGroupingFormat
+ - DADA2StatsDirFmt
+ - DADA2StatsFormat
+ - EMPPairedEndDirFmt
+ - QualityFilterStatsFmt
  - ArtificialGroupingDirectoryFormat
- - ProbabilitiesFormat
- - DeblurStatsDirFmt
- - SeppReferenceDirFmt
- - ImportanceFormat
+ - FirstDifferencesDirectoryFormat
  - BLAST6DirectoryFormat
+ - TrueTargetsDirectoryFormat
  - AlignedRNAFASTAFormat
  - DNASequencesDirectoryFormat
  - ProcrustesStatisticsDirFmt
- - PredictionsFormat
+ - QualityFilterStatsDirFmt
+ - ArtificialGroupingFormat
+ - ProbabilitiesFormat
+ - OrdinationDirectoryFormat
+ - SingleLanePerSamplePairedEndFastqDirFmt
+ - ImmutableMetadataFormat
+ - ImportanceFormat
+ - AlphaDiversityDirectoryFormat
+ - AlignedDNAFASTAFormat
+ - PredictionsDirectoryFormat
+ - UchimeStatsDirFmt
+ - UchimeStatsFmt
+ - BLAST6Format
+ - PairedDNASequencesDirectoryFormat
+ - NewickFormat
+ - QIIME1DemuxDirFmt
+ - TaxonomicClassiferTemporaryPickleDirFmt
+ - TSVTaxonomyDirectoryFormat
+ - AlignedProteinFASTAFormat
+ - DeblurStatsFmt
+ - LSMatFormat
+ - DecontamScoreFormat
+ - ProteinFASTAFormat
+ - RNAFASTAFormat
+ - EMPSingleEndDirFmt
+ - MultiplexedSingleEndBarcodeInSequenceDirFmt
+ - FirstDifferencesFormat
+ - DataLoafPackageDirFmt
+ - SeppReferenceDirFmt
+ - AlignedRNASequencesDirectoryFormat
+ - BIOMV210DirFmt
+ - PlacementsFormat
+ - BooleanSeriesFormat
+ - ProbabilitiesDirectoryFormat
+ - ErrorCorrectionDetailsDirFmt
+ - PlacementsDirFmt
+ - DifferentialDirectoryFormat
+ - DNAFASTAFormat
+ - ProcrustesStatisticsFmt
+ - BIOMV210Format
+ - SampleEstimatorDirFmt
+ - ImmutableMetadataDirectoryFormat
+ - ImportanceDirectoryFormat
+ - AlignedDNASequencesDirectoryFormat
+ - OrdinationFormat
+ - SingleLanePerSampleSingleEndFastqDirFmt
+ - Bowtie2IndexDirFmt
 </help>
     <citations>
         <citation type="doi">10.1038/s41587-019-0209-9</citation>

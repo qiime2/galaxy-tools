@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!--
-Copyright (c) 2023, QIIME 2 development team.
+Copyright (c) 2024, QIIME 2 development team.
 
 Distributed under the terms of the Modified BSD License. (SPDX: BSD-3-Clause)
 -->
@@ -23,8 +23,8 @@ for:
     <inputs>
         <param name="data" type="data" format="qza" label="data: FeatureData[Sequence¹ | AlignedSequence²]" help="[required]  The sequences from which features should be filtered.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="FeatureData[Sequence]"/>
                 <filter type="add_value" value="FeatureData[AlignedSequence]"/>
+                <filter type="add_value" value="FeatureData[Sequence]"/>
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in ['FeatureData[AlignedSequence]', 'FeatureData[Sequence]']</validator>
         </param>

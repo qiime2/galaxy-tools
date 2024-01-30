@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!--
-Copyright (c) 2023, QIIME 2 development team.
+Copyright (c) 2024, QIIME 2 development team.
 
 Distributed under the terms of the Modified BSD License. (SPDX: BSD-3-Clause)
 -->
@@ -23,9 +23,9 @@ for:
     <inputs>
         <param name="data" type="data" format="qza" label="data: SampleData[SequencesWithQuality | PairedEndSequencesWithQuality | JoinedSequencesWithQuality]" help="[required]  The demultiplexed sequences to be summarized.">
             <options options_filter_attribute="metadata.semantic_type">
-                <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[JoinedSequencesWithQuality]"/>
                 <filter type="add_value" value="SampleData[SequencesWithQuality]"/>
+                <filter type="add_value" value="SampleData[PairedEndSequencesWithQuality]"/>
             </options>
             <validator type="expression" message="Incompatible type">hasattr(value.metadata, "semantic_type") and value.metadata.semantic_type in ['SampleData[JoinedSequencesWithQuality]', 'SampleData[PairedEndSequencesWithQuality]', 'SampleData[SequencesWithQuality]']</validator>
         </param>
