@@ -358,7 +358,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FrictionlessCSVFileFormat. See the documentation below for more information. Elements must match regex: .+\.csv"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FrictionlessCSVFileFormat. See the documentation below for more information. Elements must match regex: .+\.csv"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -939,7 +939,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1001,7 +1001,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1056,7 +1056,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1095,7 +1095,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1178,7 +1178,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1233,7 +1233,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1313,7 +1313,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1344,7 +1344,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1375,7 +1375,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1430,7 +1430,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1469,7 +1469,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1522,7 +1522,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_L[0-9][0-9][0-9]_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
