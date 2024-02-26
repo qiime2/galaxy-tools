@@ -16,11 +16,6 @@ def main(tool_fp, docker_image):
 
     root.replace(root.find('requirements'), new_reqs)
 
-    # TODO: port these to q2galaxy
-    # HACK: set correct profile and hack version
-    root.set('version', root.get('version') + '.2')
-    root.set('profile', '22.05')
-
     xml.indent(tool, ' ' * 4)
     xmlbytes = xml.tostring(tool, pretty_print=True, encoding='utf-8',
                             xml_declaration=True)
