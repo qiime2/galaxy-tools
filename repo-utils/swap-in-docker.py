@@ -21,11 +21,6 @@ def main(tool_fp, docker_image):
     root.set('version', root.get('version') + '.2')
     root.set('profile', '22.05')
 
-    # HACK: fix visualizer output ftype
-    for output in root.iterfind('.//output'):
-        if output.get('name') == 'visualization':
-            output.set('ftype', 'qzv')
-
     # HACK: change command dectect_errors
     command = root.find('command')
     command.set('detect_errors', 'exit_code')
