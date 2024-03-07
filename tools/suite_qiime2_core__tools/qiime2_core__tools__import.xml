@@ -1675,7 +1675,7 @@ write(json.dumps(inputs))
                         </param>
                         <conditional name="__q2galaxy__GUI__cond__add_ext__">
                             <param name="__q2galaxy__GUI__select__ext_pick__" value="yes"/>
-                            <param name="ext" label="fastq.gz"/>
+                            <param name="ext" value="fastq.gz"/>
                         </conditional>
                     </conditional>
                 </section>
@@ -1703,7 +1703,7 @@ write(json.dumps(inputs))
                         </param>
                         <conditional name="__q2galaxy__GUI__cond__add_ext__">
                             <param name="__q2galaxy__GUI__select__ext_pick__" value="yes"/>
-                            <param name="ext" label="fastq.gz"/>
+                            <param name="ext" value="fastq.gz"/>
                         </conditional>
                     </conditional>
                 </section>
