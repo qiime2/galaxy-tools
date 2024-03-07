@@ -939,7 +939,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" format="fastqsanger.gz" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -956,7 +956,7 @@ write(json.dumps(inputs))
                                         <param name="name" type="text" help="Filename to import the data as. Must match regex: .+_.+_R[12]_001\.fastq\.gz">
                                             <validator type="regex" message="This filename doesn't match the regex.">.+_.+_R[12]_001\.fastq\.gz</validator>
                                         </param>
-                                        <param name="data" type="data" format="data" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information."/>
+                                        <param name="data" type="data" format="fastqsanger.gz" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information."/>
                                     </repeat>
                                 </when>
                             </conditional>
@@ -1147,7 +1147,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" format="fastqsanger.gz" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1164,7 +1164,7 @@ write(json.dumps(inputs))
                                         <param name="name" type="text" help="Filename to import the data as. Must match regex: .+_.+_R[12]_001\.fastq\.gz">
                                             <validator type="regex" message="This filename doesn't match the regex.">.+_.+_R[12]_001\.fastq\.gz</validator>
                                         </param>
-                                        <param name="data" type="data" format="data" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information."/>
+                                        <param name="data" type="data" format="fastqsanger.gz" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information."/>
                                     </repeat>
                                 </when>
                             </conditional>
@@ -1313,7 +1313,7 @@ write(json.dumps(inputs))
                                     <option value="individual">Associate individual files</option>
                                 </param>
                                 <when value="collection">
-                                    <param name="elements" type="data_collection" collection_type="list" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
+                                    <param name="elements" type="data_collection" collection_type="list" format="fastqsanger.gz" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information. Elements must match regex: .+_.+_R[12]_001\.fastq\.gz"/>
                                     <conditional name="__q2galaxy__GUI__cond__add_ext__">
                                         <param name="__q2galaxy__GUI__select__ext_pick__" type="select" label="Append an extension?" help="This is needed if your element identifiers lack one.">
                                             <option value="no">No, use element identifiers as is</option>
@@ -1330,7 +1330,7 @@ write(json.dumps(inputs))
                                         <param name="name" type="text" help="Filename to import the data as. Must match regex: .+_.+_R[12]_001\.fastq\.gz">
                                             <validator type="regex" message="This filename doesn't match the regex.">.+_.+_R[12]_001\.fastq\.gz</validator>
                                         </param>
-                                        <param name="data" type="data" format="data" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information."/>
+                                        <param name="data" type="data" format="fastqsanger.gz" help="This data should be formatted as a FastqGzFormat. See the documentation below for more information."/>
                                     </repeat>
                                 </when>
                             </conditional>
