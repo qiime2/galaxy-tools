@@ -33,7 +33,7 @@ suite:
       owner: q2d2
     - name: suite_qiime2__fragment_insertion
       owner: q2d2
-    - name: suite_qiime2__gneiss
+    - name: suite_qiime2__rescript
       owner: q2d2
     - name: suite_qiime2__longitudinal
       owner: q2d2

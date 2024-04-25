@@ -18,7 +18,7 @@ distributions:
      - id: 'feature_classifier'
      - id: 'feature_table'
      - id: 'fragment_insertion'
-     - id: 'gneiss'
+     - id: 'rescript'
      - id: 'longitudinal'
      - id: 'metadata'
      - id: 'phylogeny'
