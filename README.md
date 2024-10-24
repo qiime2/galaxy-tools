@@ -1,6 +1,6 @@
 # QIIME 2 Galaxy Tools
 
-**Current Version:** 2024.5
+**Current Version:** 2024.10
 
 **Toolshed Link:** [QIIME 2 Core Distribution](https://toolshed.g2.bx.psu.edu/repository?repository_id=d256b91a26ac697f)
 

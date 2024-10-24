@@ -2,7 +2,7 @@ distributions:
   - name: "core"
     description: "The QIIME 2 'core' (now amplicon) distribution"
     default_docker_image: "quay.io/qiime2/amplicon"
-    default_version: "2024.5"
+    default_version: "2024.10"
     default_package: "qiime2-amplicon"
     default_categories: ['Metagenomics', 'Sequence Analysis', 'Statistics']
     plugins:
@@ -25,5 +25,7 @@ distributions:
      - id: 'quality_control'
      - id: 'quality_filter'
      - id: 'sample_classifier'
+     - id: 'stats'
      - id: 'taxa'
+     - id: 'vizard'
      - id: 'vsearch'
