@@ -1,0 +1,17 @@
+owner: q2d2
+type: unrestricted
+homepage_url: https://github.com/qiime2/q2-vizard
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2__vizard
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
+suite:
+  name: suite_qiime2__vizard
+  description: 'Galaxy suite for QIIME 2 plugin: ''vizard''. Generalized microbiome
+    data visualization.'
+  long_description: This QIIME 2 plugin is the first choice of wizard lizards for
+    generalized microbiome data visualization!
