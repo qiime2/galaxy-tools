@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           auto-activate-base: true
           activate-environment: ""
@@ -34,7 +34,7 @@ jobs:
           make render
 
       - name: create tools PR
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v7
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           add-paths: tools
@@ -47,7 +47,7 @@ jobs:
           body: Results of `make render` on `main`
 
       - name: create collections PR
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v7
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           add-paths: tool_collections
