@@ -1,6 +1,6 @@
 owner: q2d2
 type: unrestricted
-homepage_url: http://emperor.microbio.me
+homepage_url: http://biocore.github.io/emperor/build/html/index.html
 remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2__emperor
 categories:
   - Metagenomics
