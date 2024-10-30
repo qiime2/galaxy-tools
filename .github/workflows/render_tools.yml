@@ -4,16 +4,12 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths-ignore:
-      - 'tool_collections/**'
-      - 'tools/**'
-      - 'README.md'
+    paths:
+      - 'distros.yaml'
   pull_request:
     branches: [main]
-    paths-ignore:
-      - 'tool_collections/**'
-      - 'tools/**'
-      - 'README.md'
+    paths:
+      - 'distros.yaml'
 
 jobs:
   render:
