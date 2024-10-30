@@ -5,7 +5,7 @@ categories:
   - Sequence Analysis
 suite:
   name: suite_qiime2_core
-  description: The QIIME 2 'core' distribution
+  description: The QIIME 2 'core' (now amplicon) distribution
   include_repositories:
     - name: suite_qiime2_core__tools
       owner: q2d2
@@ -47,7 +47,11 @@ suite:
       owner: q2d2
     - name: suite_qiime2__sample_classifier
       owner: q2d2
+    - name: suite_qiime2__stats
+      owner: q2d2
     - name: suite_qiime2__taxa
+      owner: q2d2
+    - name: suite_qiime2__vizard
       owner: q2d2
     - name: suite_qiime2__vsearch
       owner: q2d2
