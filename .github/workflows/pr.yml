@@ -294,7 +294,8 @@ jobs:
         path: ~/.planemo
         key: planemo_cache_py_${{ matrix.python-version }}_gxy_${{ needs.setup.outputs.galaxy-head-sha }}
     - name: Get number of CPU cores
-      uses: SimenB/github-actions-cpu-cores@v2
+      # Replaces SimenB/github-actions-cpu-cores@v2
+      uses: qiime2-cutlery/github-actions-cpu-cores@main
       id: cpu-cores
     - name: Clean dotnet folder for space
       run: rm -Rf /usr/share/dotnet
