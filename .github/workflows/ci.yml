@@ -68,7 +68,8 @@ jobs:
       with:
         fetch-depth: 1
     - name: Fake a Planemo run to update cache and determine commit range, repositories, and chunks
-      uses: galaxyproject/planemo-ci-action@v1
+      # Replaces galaxyproject/planemo-ci-action@v1
+      uses: qiime2-cutlery/planemo-ci-action@main
       id: discover
       with:
         create-cache: ${{ steps.cache-pip.outputs.cache-hit != 'true' || steps.cache-planemo.outputs.cache-hit != 'true' }}
@@ -106,7 +107,8 @@ jobs:
   #       path: ~/.cache/pip
   #       key: pip_cache_py_${{ matrix.python-version }}_gxy_${{ needs.setup.outputs.galaxy-head-sha }}
   #   - name: Planemo lint
-  #     uses: galaxyproject/planemo-ci-action@v1
+  #     # Replaces galaxyproject/planemo-ci-action@v1
+  #     uses: qiime2-cutlery/planemo-ci-action@main
   #     id: lint
   #     with:
   #       mode: lint
@@ -161,7 +163,8 @@ jobs:
     - name: Clean dotnet folder for space
       run: rm -Rf /usr/share/dotnet
     - name: Planemo test
-      uses: galaxyproject/planemo-ci-action@v1
+      # Replaces galaxyproject/planemo-ci-action@v1
+      uses: qiime2-cutlery/planemo-ci-action@main
       id: test
       with:
         mode: test
@@ -205,7 +208,8 @@ jobs:
         path: ~/.cache/pip
         key: pip_cache_py_${{ matrix.python-version }}_gxy_${{ needs.setup.outputs.galaxy-head-sha }}
     - name: Combine outputs
-      uses: galaxyproject/planemo-ci-action@v1
+      # Replaces galaxyproject/planemo-ci-action@v1
+      uses: qiime2-cutlery/planemo-ci-action@main
       id: combine
       with:
         mode: combine
@@ -238,7 +242,8 @@ jobs:
 #          [1]: ${{ steps.vars.outputs.run-url }}
 # MODIFIED END
     - name: Check outputs
-      uses: galaxyproject/planemo-ci-action@v1
+      # Replaces galaxyproject/planemo-ci-action@v1
+      uses: qiime2-cutlery/planemo-ci-action@main
       id: check
       with:
         mode: check
