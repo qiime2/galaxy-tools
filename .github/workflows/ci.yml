@@ -35,7 +35,8 @@ jobs:
     steps:
     - name: Add reaction
       if: ${{ github.event.client_payload.slash_command.command == 'run-all-tool-tests' }}
-      uses: peter-evans/create-or-update-comment@v4
+      # Replaces peter-evans/create-or-update-comment@v4
+      uses: qiime2-cutlery/create-or-update-comment@v4
       with:
         token: ${{ secrets.PAT }}
         repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
@@ -228,7 +229,8 @@ jobs:
 # MODIFIED START
 #    - name: Create comment
 #      if: ${{ github.event.client_payload.slash_command.command == 'run-all-tool-tests' }}
-#      uses: peter-evans/create-or-update-comment@v4
+#      # Replaces peter-evans/create-or-update-comment@v4
+#      uses: qiime2-cutlery/create-or-update-comment@v4
 #      with:
 #        token: ${{ secrets.PAT }}
 #        repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
