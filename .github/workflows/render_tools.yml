@@ -18,7 +18,8 @@ jobs:
       - name: checkout source
         uses: actions/checkout@v4
 
-      - uses: conda-incubator/setup-miniconda@v3
+      # Replaces conda-incubator/setup-miniconda@v3
+      - uses: qiime2-cutlery/setup-miniconda@v3
         with:
           auto-activate-base: true
           activate-environment: ""
