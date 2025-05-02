@@ -31,7 +31,8 @@ jobs:
           make render
 
       - name: create tools PR
-        uses: peter-evans/create-pull-request@v7
+        # Replaces peter-evans/create-pull-request@v7
+        uses: qiime2-cutlery/create-pull-request@v7
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           add-paths: tools
@@ -44,7 +45,8 @@ jobs:
           body: Results of `make render` on `main`
 
       - name: create collections PR
-        uses: peter-evans/create-pull-request@v7
+        # Replaces peter-evans/create-pull-request@v7
+        uses: qiime2-cutlery/create-pull-request@v7
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           add-paths: tool_collections
