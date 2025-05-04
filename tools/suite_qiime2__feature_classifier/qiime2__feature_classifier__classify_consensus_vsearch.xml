@@ -15,6 +15,9 @@ for:
     <xrefs>
         <xref type="bio.tools">qiime2</xref>
     </xrefs>
+    <edam_topics>
+        <edam_topic>topic_3174</edam_topic>
+    </edam_topics>
     <requirements>
         <container type="docker">quay.io/qiime2/amplicon:2024.10</container>
     </requirements>
