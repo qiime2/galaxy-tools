@@ -1,7 +1,7 @@
 owner: q2d2
 categories:
-  - Metagenomics
   - Statistics
+  - Metagenomics
   - Sequence Analysis
 suite:
   name: suite_qiime2_core
