@@ -26,9 +26,11 @@ jobs:
 
       - name: render tools
         shell: bash -l {0}
+      # 10.31.2025 pin conda to <25.9.* due to deprecated conda.cli.python_api
+      # https://docs.conda.io/projects/conda/en/stable/release-notes.html#version-25.9.0 #noqa
         run: |
+          conda install -n base py 'conda=25.8.*'
           conda install pyyaml
-          conda --version
           make render
 
       - name: create tools PR
