@@ -2,12 +2,11 @@ distributions:
   - name: "core"
     description: "The QIIME 2 'core' (now amplicon) distribution"
     default_docker_image: "quay.io/qiime2/amplicon"
-    default_version: "2025.10"
+    default_version: "2025.7"
     default_package: "qiime2-amplicon"
     default_categories: ['Metagenomics', 'Sequence Analysis', 'Statistics']
     plugins:
      - id: 'alignment'
-     - id: 'boots'
      - id: 'composition'
      - id: 'cutadapt'
      - id: 'dada2'
@@ -18,9 +17,7 @@ distributions:
      - id: 'emperor'
      - id: 'feature_classifier'
      - id: 'feature_table'
-     - id: 'fondue'
      - id: 'fragment_insertion'
-     - id: 'kmerizer'
      - id: 'rescript'
      - id: 'longitudinal'
      - id: 'metadata'
