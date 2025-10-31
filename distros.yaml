@@ -1,4 +1,3 @@
-# rerun
 distributions:
   - name: "core"
     description: "The QIIME 2 'core' (now amplicon) distribution"
