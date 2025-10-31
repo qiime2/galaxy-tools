@@ -29,7 +29,7 @@ jobs:
       # 10.31.2025 pin conda to <25.9.* due to deprecated conda.cli.python_api
       # https://docs.conda.io/projects/conda/en/stable/release-notes.html#version-25.9.0 #noqa
         run: |
-          conda install -n base py 'conda=25.8.*'
+          conda install -n base -y 'conda=25.8.*'
           conda install pyyaml
           make render
 
