@@ -28,6 +28,7 @@ jobs:
         shell: bash -l {0}
         run: |
           conda install pyyaml
+          conda --version
           make render
 
       - name: create tools PR
