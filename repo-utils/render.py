@@ -8,7 +8,7 @@ import subprocess
 from xml.sax.saxutils import quoteattr
 
 import yaml
-import conda.cli.python_api as conda_api
+import conda.testing.conda_cli as conda_api
 
 TMP_CONDA_PREFIX = '_conda/'
 
