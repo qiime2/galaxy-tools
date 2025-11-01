@@ -1,0 +1,16 @@
+owner: q2d2
+type: unrestricted
+homepage_url: https://github.com/bokulich-lab/q2-kmerizer
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2__kmerizer
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
+suite:
+  name: suite_qiime2__kmerizer
+  description: 'Galaxy suite for QIIME 2 plugin: ''kmerizer''. Kmer generation from
+    sequences.'
+  long_description: A plugin to generate kmers from biological sequences.

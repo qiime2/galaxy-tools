@@ -1,0 +1,17 @@
+owner: q2d2
+type: unrestricted
+homepage_url: https://library.qiime2.org/plugins/caporaso-lab/q2-boots
+remote_repository_url: https://github.com/qiime2/galaxy-tools/tree/main/tools/suite_qiime2__boots
+categories:
+  - Metagenomics
+  - Sequence Analysis
+  - Statistics
+auto_tool_repositories:
+  name_template: '{{ tool_id }}'
+  description_template: 'Galaxy tool for QIIME 2 action: ''{{tool_name}}''.'
+suite:
+  name: suite_qiime2__boots
+  description: 'Galaxy suite for QIIME 2 plugin: ''boots''. Bootstrapped and rarefaction-based
+    diversity analyses.'
+  long_description: A plugin providing bootstrapped and rarefaction-based (i.e., resampled)
+    diversity analyses, designed to mirror the interface of q2-diversity.
