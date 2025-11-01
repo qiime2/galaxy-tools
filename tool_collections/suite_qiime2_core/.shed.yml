@@ -1,8 +1,8 @@
 owner: q2d2
 categories:
-  - Statistics
-  - Metagenomics
   - Sequence Analysis
+  - Metagenomics
+  - Statistics
 suite:
   name: suite_qiime2_core
   description: The QIIME 2 'core' (now amplicon) distribution
@@ -10,6 +10,8 @@ suite:
     - name: suite_qiime2_core__tools
       owner: q2d2
     - name: suite_qiime2__alignment
+      owner: q2d2
+    - name: suite_qiime2__boots
       owner: q2d2
     - name: suite_qiime2__composition
       owner: q2d2
@@ -31,7 +33,11 @@ suite:
       owner: q2d2
     - name: suite_qiime2__feature_table
       owner: q2d2
+    - name: suite_qiime2__fondue
+      owner: q2d2
     - name: suite_qiime2__fragment_insertion
+      owner: q2d2
+    - name: suite_qiime2__kmerizer
       owner: q2d2
     - name: suite_qiime2__rescript
       owner: q2d2
