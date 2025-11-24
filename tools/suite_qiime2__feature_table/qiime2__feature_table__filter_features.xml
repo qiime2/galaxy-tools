@@ -134,7 +134,7 @@ Using the ``qiime2 feature-table filter-features`` tool:
 
 filter_features_sequences
 *************************
-| Retain only features that are represented in the collection of sequences provided as metadata. This is useful, for example, for removing sequences that are identified as chimeric. To learn about using Artifacts as Metadata, as is performed here, see https://use.qiime2.org/en/latest/how-to-guides/artifacts-as-metadata.html
+| Retain only features that are represented in the collection of sequences provided as metadata. This is useful, for example, for removing sequences that are identified as chimeric. To learn about using Artifacts as Metadata, as is performed here, see https://use.qiime2.org/en/stable/how-to-guides/artifacts-as-metadata.html
 Using the ``qiime2 feature-table filter-features`` tool:
  #. Set *"table"* to ``#: feature-table.qza``
  #. Expand the ``additional options`` section
