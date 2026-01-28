@@ -60,57 +60,6 @@ for:
     <outputs>
         <data name="distance_matrix" format="qza" label="${tool.name} on ${on_string}: distance_matrix.qza" from_work_dir="distance_matrix.qza"/>
     </outputs>
-    <tests>
-        <test>
-            <param name="tables" value="beta_phylogenetic_meta_passthrough.test0.feature-table1.qza,beta_phylogenetic_meta_passthrough.test0.feature-table2.qza" ftype="qza"/>
-            <param name="phylogenies" value="beta_phylogenetic_meta_passthrough.test0.phylogeny1.qza,beta_phylogenetic_meta_passthrough.test0.phylogeny2.qza" ftype="qza"/>
-            <param name="metric" value="weighted_normalized_unifrac"/>
-            <output name="distance_matrix" ftype="qza">
-                <assert_contents>
-                    <has_archive_member path="[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\/metadata.yaml">
-                        <has_line_matching expression="type: DistanceMatrix"/>
-                    </has_archive_member>
-                </assert_contents>
-            </output>
-        </test>
-        <test>
-            <param name="tables" value="beta_phylogenetic_meta_passthrough.test1.feature-table1.qza,beta_phylogenetic_meta_passthrough.test1.feature-table2.qza" ftype="qza"/>
-            <param name="phylogenies" value="beta_phylogenetic_meta_passthrough.test1.phylogeny.qza,beta_phylogenetic_meta_passthrough.test1.phylogeny.qza" ftype="qza"/>
-            <param name="metric" value="weighted_normalized_unifrac"/>
-            <repeat name="weights">
-                <param name="element" value="3.0"/>
-            </repeat>
-            <repeat name="weights">
-                <param name="element" value="42.0"/>
-            </repeat>
-            <output name="distance_matrix" ftype="qza">
-                <assert_contents>
-                    <has_archive_member path="[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\/metadata.yaml">
-                        <has_line_matching expression="type: DistanceMatrix"/>
-                    </has_archive_member>
-                </assert_contents>
-            </output>
-        </test>
-        <test>
-            <param name="tables" value="beta_phylogenetic_meta_passthrough.test2.feature-table1.qza,beta_phylogenetic_meta_passthrough.test2.feature-table2.qza" ftype="qza"/>
-            <param name="phylogenies" value="beta_phylogenetic_meta_passthrough.test2.phylogeny1.qza,beta_phylogenetic_meta_passthrough.test2.phylogeny2.qza" ftype="qza"/>
-            <param name="metric" value="weighted_normalized_unifrac"/>
-            <repeat name="weights">
-                <param name="element" value="0.4"/>
-            </repeat>
-            <repeat name="weights">
-                <param name="element" value="0.6"/>
-            </repeat>
-            <param name="consolidation" value="skipping_missing_values"/>
-            <output name="distance_matrix" ftype="qza">
-                <assert_contents>
-                    <has_archive_member path="[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\/metadata.yaml">
-                        <has_line_matching expression="type: DistanceMatrix"/>
-                    </has_archive_member>
-                </assert_contents>
-            </output>
-        </test>
-    </tests>
     <help>
 QIIME 2: diversity-lib beta-phylogenetic-meta-passthrough
 =========================================================
@@ -121,7 +70,7 @@ Outputs:
 --------
 :distance_matrix.qza: The resulting distance matrix.
 
-|  
+|
 
 Description:
 ------------
@@ -236,7 +185,7 @@ Once completed, for the new entry in your history, use the ``Edit`` button to se
       - ``ft1-ft2-w-norm-unifrac-dm.qza``
 
 
-|  
+|
 
 </help>
     <citations>

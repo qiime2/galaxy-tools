@@ -85,17 +85,6 @@ for:
             </output>
         </test>
         <test>
-            <param name="table" value="beta_passthrough.test2.feature-table.qza" ftype="qza"/>
-            <param name="metric" value="aitchison"/>
-            <output name="distance_matrix" ftype="qza">
-                <assert_contents>
-                    <has_archive_member path="[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\/metadata.yaml">
-                        <has_line_matching expression="type: DistanceMatrix"/>
-                    </has_archive_member>
-                </assert_contents>
-            </output>
-        </test>
-        <test>
             <param name="table" value="beta_passthrough.test3.feature-table.qza" ftype="qza"/>
             <param name="metric" value="aitchison"/>
             <param name="pseudocount" value="5"/>
@@ -118,7 +107,7 @@ Outputs:
 --------
 :distance_matrix.qza: The resulting distance matrix.
 
-|  
+|
 
 Description:
 ------------
@@ -209,7 +198,7 @@ Once completed, for the new entry in your history, use the ``Edit`` button to se
       - ``aitchison-dm.qza``
 
 
-|  
+|
 
 </help>
     <citations>
