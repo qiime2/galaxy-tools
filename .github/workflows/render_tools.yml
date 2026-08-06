@@ -1,64 +1,87 @@
 name: Render Galaxy Tools
 
 on:
-  workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - 'distros.yaml'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'distros.yaml'
+  workflow_dispatch:
+    inputs:
+      qiime2_image:
+        description: Full QIIME 2 image reference, preferably including a digest
+        required: true
+        type: string
+      q2galaxy_version:
+        description: Published q2galaxy version on PyPI
+        required: true
+        type: string
+      runtime_image:
+        description: Quay repository for the layered runtime image
+        required: true
+        default: quay.io/qiime2/q2galaxy-runtime
+        type: string
+      runtime_tag:
+        description: Docker tag for this QIIME 2 and q2galaxy combination
+        required: true
+        type: string
 
 jobs:
   render:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout source
+      - name: checkout galaxy-tools
         uses: actions/checkout@v4
 
-      # Replaces conda-incubator/setup-miniconda@v3
-      - uses: qiime2-cutlery/setup-miniconda@v3
+      - name: log in to Quay
+        uses: docker/login-action@v3
         with:
-          auto-activate-base: true
-          activate-environment: ""
+          registry: quay.io
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_PASSWORD }}
 
-      - name: render tools
-        shell: bash -l {0}
-      # 10.31.2025 pin conda to <25.9.* due to deprecated conda.cli.python_api
-      # https://docs.conda.io/projects/conda/en/stable/release-notes.html#version-25.9.0 #noqa
+      - name: set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: build and publish runtime image
+        id: runtime
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/runtime.Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ inputs.runtime_image }}:${{ inputs.runtime_tag }}
+          build-args: |
+            QIIME2_IMAGE=${{ inputs.qiime2_image }}
+            Q2GALAXY_VERSION=${{ inputs.q2galaxy_version }}
+
+      - name: render tools and ToolShed metadata
+        env:
+          RUNTIME_IMAGE: ${{ inputs.runtime_image }}@${{ steps.runtime.outputs.digest }}
         run: |
-          conda install -n base -y -c defaults 'conda<25.9'
-          conda install pyyaml
-          make render
+          docker run --rm \
+            --user "$(id -u):$(id -g)" \
+            --env HOME=/tmp/q2galaxy-home \
+            --env XDG_CACHE_HOME=/tmp/q2galaxy-cache \
+            --volume "$GITHUB_WORKSPACE:/workspace" \
+            --workdir /workspace \
+            "$RUNTIME_IMAGE" \
+            q2galaxy template distribution \
+              --container "$RUNTIME_IMAGE" \
+              --clean \
+              distros.yaml .
+          git diff --check
 
-      - name: create tools PR
+      - name: create rendered tools PR
         # Replaces peter-evans/create-pull-request@v7
         uses: qiime2-cutlery/create-pull-request@v7
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          add-paths: tools
-          branch: create-pull-request/patch-tools
+          add-paths: |
+            tools
+            tool_collections
+          branch: create-pull-request/rendered-tools
           token: ${{ secrets.Q2D2_TOKEN }}
-          commit-message: Update Galaxy Tools
+          commit-message: Update Galaxy tools and collections
           committer: q2d2 <q2d2.noreply@gmail.com>
           author: q2d2 <q2d2.noreply@gmail.com>
-          title: Automated re-render of Galaxy Tools
-          body: Results of `make render` on `main`
-
-      - name: create collections PR
-        # Replaces peter-evans/create-pull-request@v7
-        uses: qiime2-cutlery/create-pull-request@v7
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          add-paths: tool_collections
-          branch: create-pull-request/patch-collections
-          token: ${{ secrets.Q2D2_TOKEN }}
-          commit-message: Update Galaxy Tool Collections
-          committer: q2d2 <q2d2.noreply@gmail.com>
-          author: q2d2 <q2d2.noreply@gmail.com>
-          title: Automated re-render of Galaxy Tool Collections (wait to merge)
+          title: Automated re-render of Galaxy tools and collections
           body: |
-            Results of `make render` on `main`.
-            DO NOT MERGE until all tools in the sibling PR have successfully deployed.
+            Results of q2galaxy `${{ inputs.q2galaxy_version }}` rendering on `main`.
+            Runtime image: `${{ inputs.runtime_image }}@${{ steps.runtime.outputs.digest }}`

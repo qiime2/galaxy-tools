@@ -25,10 +25,10 @@ env:
   MAX_CHUNKS: 6 # MODIFIED
   MAX_FILE_SIZE: 10M # MODIFIED - sorry :'(
 concurrency:
-  # Group runs by PR, but keep runs on the default branch separate
-  # because we do not want to cancel ToolShed uploads
-  group: pr-${{ (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main') && github.run_number || github.ref }}
-  cancel-in-progress: true
+  # Pull-request updates supersede older CI runs. Default-branch runs share a
+  # fixed group so ToolShed releases are queued instead of overlapping.
+  group: ${{ (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main') && 'toolshed-release' || format('pr-{0}', github.ref) }}
+  cancel-in-progress: ${{ !(github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main') }}
 jobs:
   # the setup job does two things:
   # 1. cache the pip cache and .planemo
@@ -43,6 +43,8 @@ jobs:
     outputs:
       galaxy-head-sha: ${{ steps.get-galaxy-sha.outputs.galaxy-head-sha }}
       repository-list: ${{ steps.discover.outputs.repository-list }}
+      tool-repository-list: ${{ steps.split-repositories.outputs.tools }}
+      collection-repository-list: ${{ steps.split-repositories.outputs.collections }}
       tool-list: ${{ steps.discover.outputs.tool-list }}
       chunk-count: ${{ steps.discover.outputs.chunk-count }}
       chunk-list: ${{ steps.discover.outputs.chunk-list }}
@@ -101,6 +103,19 @@ jobs:
       run: echo '${{ steps.discover.outputs.commit-range }}'
     - name: Show repository list
       run: echo '${{ steps.discover.outputs.repository-list }}'
+    - name: Split tool and collection repositories
+      id: split-repositories
+      env:
+        REPOSITORIES: ${{ steps.discover.outputs.repository-list }}
+      run: |
+        {
+          echo 'tools<<EOF'
+          printf '%s\n' "$REPOSITORIES" | sed -n '\|^tools/|p'
+          echo 'EOF'
+          echo 'collections<<EOF'
+          printf '%s\n' "$REPOSITORIES" | sed -n '\|^tool_collections/|p'
+          echo 'EOF'
+        } >> "$GITHUB_OUTPUT"
     - name: Show tool list
       run: echo '${{ steps.discover.outputs.tool-list }}'
     - name: Show chunks
@@ -394,21 +409,40 @@ jobs:
       with:
         path: ~/.cache/pip
         key: pip_cache_py_${{ matrix.python-version }}_gxy_${{ needs.setup.outputs.galaxy-head-sha }}
-    - name: Deploy on testtoolshed
+    - name: Deploy tools on testtoolshed
       # Replaces galaxyproject/planemo-ci-action@v1
       uses: qiime2-cutlery/planemo-ci-action@v1
+      id: deploy_tools_testtoolshed
       with:
         mode: deploy
-        repository-list: ${{ needs.setup.outputs.repository-list }}
+        repository-list: ${{ needs.setup.outputs.tool-repository-list }}
         shed-target: testtoolshed
         shed-key: ${{ secrets.TTS_API_KEY }}
       continue-on-error: true
-    - name: Deploy on toolshed
+    - name: Deploy collections on testtoolshed
+      # Replaces galaxyproject/planemo-ci-action@v1
+      uses: qiime2-cutlery/planemo-ci-action@v1
+      if: ${{ steps.deploy_tools_testtoolshed.outcome == 'success' }}
+      with:
+        mode: deploy
+        repository-list: ${{ needs.setup.outputs.collection-repository-list }}
+        shed-target: testtoolshed
+        shed-key: ${{ secrets.TTS_API_KEY }}
+      continue-on-error: true
+    - name: Deploy tools on toolshed
       # Replaces galaxyproject/planemo-ci-action@v1
       uses: qiime2-cutlery/planemo-ci-action@v1
       with:
         mode: deploy
-        repository-list: ${{ needs.setup.outputs.repository-list }}
+        repository-list: ${{ needs.setup.outputs.tool-repository-list }}
+        shed-target: toolshed
+        shed-key: ${{ secrets.TS_API_KEY }}
+    - name: Deploy collections on toolshed
+      # Replaces galaxyproject/planemo-ci-action@v1
+      uses: qiime2-cutlery/planemo-ci-action@v1
+      with:
+        mode: deploy
+        repository-list: ${{ needs.setup.outputs.collection-repository-list }}
         shed-target: toolshed
         shed-key: ${{ secrets.TS_API_KEY }}
 
